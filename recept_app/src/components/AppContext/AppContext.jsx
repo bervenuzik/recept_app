@@ -1,15 +1,26 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const Context = createContext({})
+const Context = createContext({
+    drinks:[],
+    setDrinks:()=>{},
+})
 
 
-const contextValue = {}
+
 
 export function AppContext ({children}){
+    const [drinks , setDrinks] = useState([]);
+    const contextValue = {
+        drinks,
+        setDrinks,
+    }
 
-    <Context.Provider  value={contextValue}>
-        {children}
-    </Context.Provider>
+
+    return (
+            <Context.Provider  value={contextValue}>
+                {children}
+            </Context.Provider>
+    )
 }
 
 
