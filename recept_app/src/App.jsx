@@ -1,3 +1,4 @@
+//import "../normalize.css"
 import './App.css'
 import Header from './components/Header/Header'
 import { Route, Routes } from 'react-router-dom'
@@ -10,11 +11,13 @@ function App() {
   return (
     <>
     <Header/>
+    <main>
       <Routes>
         <Route path='/' element={<GreetingPage/>} />
         <Route path='/home' element={<HomePage/>} />
-        <Route path='/home/grsdg' element={<CategoryPage/>} /> */}
+        {/* <Route path='/home/grsdg' element={<CategoryPage/>} /> */}
        </Routes>
+    </main>
     <Footer/>
     </>
   )

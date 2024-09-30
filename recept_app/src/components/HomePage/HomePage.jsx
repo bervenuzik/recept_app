@@ -17,7 +17,7 @@ function HomePage(){
     
 
     return (
-        <div>
+        <div className={styles.home}>
             {loading && <CircularProgress />}
             {(!loading && drinks) && <CardsGrid drinks={drinks}/>}
         </div>

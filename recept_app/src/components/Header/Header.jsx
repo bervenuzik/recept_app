@@ -4,11 +4,16 @@ function Header (){
 
 return(
     <header>
-       <img></img>
+        <div className={styles.wrapper}>
+
+       <div>
+        logo    
+       </div>
        <input type="text" />
        <nav>
-        <h1>fsfsefesf</h1>
+        <h1>menu</h1>
        </nav>
+        </div>
     </header>
 )
 
