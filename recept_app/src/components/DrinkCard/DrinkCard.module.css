@@ -1,14 +1,18 @@
 :root{
     --img-size:350px;
-    --card-size:350px
+    --card-size:350px;
+    --distance-for-lable-vertical:10px;
+    --distance-for-lable-horisontal:10px;
 }
 
 .card{
     position: relative;
-    padding: 10px;
+    padding: 0 0 10px 0 ;
     width: var(--card-size);
-    border: 2px solid rgb(225, 225, 210);
-    border-radius: 8px;
+    border: 0.5px solid rgb(225, 225, 210);
+    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,31 +34,22 @@
   font-style: normal;
 }
 
-.card p{
-
-}
 .card > img{
     object-fit: cover;
     aspect-ratio: 1/1;
     width: 100%;
     height: auto;
     max-width: var(--img-size);
-    border-radius: 8px;
+    
 }
 
 .rating{
-    align-items: center;
     position: absolute;
-    min-width: 25px;
-    top: 30px;
-    left: 30px;
-    display: block;
-    padding: 8px;
-    border-radius: 8px;
-    background-color: darkgoldenrod;
-    color: black;
-    display: flex;
-    justify-items: center;
-    gap: 5px;
-    opacity: 70%;
+    top: var(--distance-for-lable-vertical);
+    left: var(--distance-for-lable-horisontal);
+}
+.time{
+    position: absolute;
+    top: var(--distance-for-lable-vertical);
+    right: var(--distance-for-lable-horisontal);
 }
