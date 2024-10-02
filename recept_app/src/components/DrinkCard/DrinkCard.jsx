@@ -12,6 +12,7 @@ function DrinkCard({id ,title , imageUrl ,description, rating}){
             </a>
         </div>
     )
+    /* hej */
 
 }
 
