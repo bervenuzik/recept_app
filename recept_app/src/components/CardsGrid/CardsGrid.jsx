@@ -9,10 +9,7 @@ function CardsGrid({drinks}){
                 return <DrinkCard 
                 key={index}
                 id={drink.id}
-                title={drink.title}
-                description={drink.description}
-                rating={drink.rating}
-                imageUrl={drink.imageUrl}
+                {...drink}
                 />;
             })}
         </div>

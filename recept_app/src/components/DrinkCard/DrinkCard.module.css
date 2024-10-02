@@ -4,6 +4,7 @@
 }
 
 .card{
+    position: relative;
     padding: 10px;
     width: var(--card-size);
     border: 2px solid rgb(225, 225, 210);
@@ -11,7 +12,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap:15px;
     text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.card > *{
+    margin: 0;
+}
+
+.card h3{
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.card p{
+
 }
 .card > img{
     object-fit: cover;
@@ -20,4 +40,21 @@
     height: auto;
     max-width: var(--img-size);
     border-radius: 8px;
+}
+
+.rating{
+    align-items: center;
+    position: absolute;
+    min-width: 25px;
+    top: 30px;
+    left: 30px;
+    display: block;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: darkgoldenrod;
+    color: black;
+    display: flex;
+    justify-items: center;
+    gap: 5px;
+    opacity: 70%;
 }
