@@ -1,0 +1,36 @@
+:root{
+    --btn-offset-vertical:15px;
+    --btn-offset-horisontal:15px;
+}
+
+.window{
+    margin: auto;
+    padding: 15px;
+    height: 75%;
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    overflow: auto;
+    scroll-behavior: smooth;
+    outline: none;
+    position: relative;
+}
+.test{
+    height: 2000px;
+}
+
+.window::backdrop{
+    
+    opacity: 80%;
+    background-color: black;
+    pointer-events: none; 
+}
+.closeBtn{
+    position: absolute;
+    top:var(--btn-offset-vertical);
+    left:var(--btn-offset-horisontal);
+
+
+
+
+}

@@ -1,9 +1,11 @@
-import { useEffect} from "react";
-import useColorThief from "use-color-thief";
+import {useState} from "react";
+
 import styles from "./DrinkCard.module.css";
 import StarsIcon from "@mui/icons-material/Stars";
 import Label from "./Label/Label";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import DetailedWindow from "./DetailedWindow/DetailedWindow";
+import { Backdrop, Button } from "@mui/material";
 
 function DrinkCard({
   id,
@@ -13,29 +15,11 @@ function DrinkCard({
   avgRating,
   timeInMins,
 }) {
+  const [detailedMode , setDetailedMode] = useState(false);
 
-  const { color: imageColor } = useColorThief(imageUrl, {
-    format: "rgb",
-    colorCount: 10,
-    quality: 10,
-  });
-  function getIsBackgroundDark(){
-    if(!imageColor) return false;
-    const brightness = Math.round(
-      (imageColor[0] * 299 + imageColor[1] * 587 + imageColor[2] * 114) / 1000
-    );
-    if (brightness <= 128) {
-      return true
-    }
-    return false;
+  function showDetailedWindow(){
+    setDetailedMode((prev)=>!prev)
   }
-  
-  const isBackgroundDark = getIsBackgroundDark();
-
-  useEffect(() => {
-    console.log(imageColor);
-  }, [imageColor]);
-
   return (
     <div className={styles.card}>
       {avgRating && (
@@ -43,7 +27,7 @@ function DrinkCard({
           className={styles.rating}
           Icon={StarsIcon}
           text={avgRating}
-          isDarkBg={isBackgroundDark}
+          imgUrl={imageUrl}
         />
       )}
       {timeInMins && (
@@ -51,15 +35,15 @@ function DrinkCard({
           className={styles.time}
           Icon={AccessTimeIcon}
           text={timeInMins}
-          isDarkBg={isBackgroundDark}
+          imgUrl={imageUrl}
         />
       )}
       <img  src={imageUrl} alt={`${title}_image`} />
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{description}</p>
-      <a className={styles.link} href={`/drink/${id}`}>
-        <button className={styles.btn}>Show More</button>
-      </a>
+        <Button onClick={showDetailedWindow} variant="text" className={styles.btn}>Show More</Button>
+        
+      <DetailedWindow onClose={showDetailedWindow} open={detailedMode}/>
     </div>
   );
 }
