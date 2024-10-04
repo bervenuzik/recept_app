@@ -1,0 +1,54 @@
+:root{
+    --btn-offset-vertical:15px;
+    --btn-offset-horisontal:15px;
+}
+
+.window{
+    position: fixed;
+    padding: 15px;
+    height: fit-content;
+    min-height: 50px;
+    max-height: 75%;
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    overflow: auto;
+    scroll-behavior: smooth;
+    outline: none;
+    margin: auto;
+    z-index: 10;
+}
+.window::backdrop{
+    display: none;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+}
+.test{
+    height: 2000px;
+}
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    opacity: 70%;
+    background-color: rgb(28, 28, 28);
+    display: none;
+
+}
+.backdrop__visible{
+    display: block;
+}
+.closeBtn{
+    position: absolute;
+    display: inline;
+    position: absolute;
+    top:var(--btn-offset-vertical);
+    left:var(--btn-offset-horisontal);
+}

@@ -4,18 +4,12 @@ import styles from "./DrinkCard.module.css";
 import StarsIcon from "@mui/icons-material/Stars";
 import Label from "./Label/Label";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import DetailedWindow from "./DetailedWindow/DetailedWindow";
+import ModalDetails from "./ModalDetails/ModalDetails";
 import { Backdrop, Button } from "@mui/material";
 
-function DrinkCard({
-  id,
-  title,
-  imageUrl,
-  description,
-  avgRating,
-  timeInMins,
-}) {
+function DrinkCard({drink}) {
   const [detailedMode , setDetailedMode] = useState(false);
+  const {_id, title, imageUrl ,description ,avgRating ,timeInMins } = drink;
 
   function showDetailedWindow(){
     setDetailedMode((prev)=>!prev)
@@ -43,9 +37,11 @@ function DrinkCard({
       <p className={styles.description}>{description}</p>
         <Button onClick={showDetailedWindow} variant="text" className={styles.btn}>Show More</Button>
         
-      <DetailedWindow onClose={showDetailedWindow} open={detailedMode}/>
+      <ModalDetails drink={drink} onClose={showDetailedWindow} open={detailedMode}/>
     </div>
   );
 }
 
 export default DrinkCard;
+
+//TODO: перенести модальное окно в корень проекта  и поменять логику на useContext

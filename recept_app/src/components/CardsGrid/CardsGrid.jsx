@@ -1,18 +1,20 @@
 import styles from "./CardsGrid.module.css"
 import DrinkCard from "../DrinkCard/DrinkCard";
 
+
 function CardsGrid({drinks}){
 
     return(
+        <>
         <div className={styles.cardGrid}>
-            {drinks.map((drink , index) => {
+            {drinks.map((drink) => {
                 return <DrinkCard 
-                key={index}
-                id={drink.id}
-                {...drink}
+                key={drink._id}
+                drink={drink}
                 />;
             })}
         </div>
+        </>
     )
 }
 
