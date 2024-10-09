@@ -1,11 +1,14 @@
 :root{
-    --btn-offset-vertical:15px;
-    --btn-offset-horisontal:15px;
+    --btn-offset-vertical:10px;
+    --btn-offset-horisontal:10px;
 }
 
 .window{
+    scrollbar-width: 0;
+    box-sizing: border-box;
+    margin: 0 5px;
     position: fixed;
-    padding: 15px;
+    padding: 40px 15px 40px;
     height: fit-content;
     min-height: 50px;
     max-height: 75%;
@@ -47,8 +50,15 @@
 }
 .closeBtn{
     position: absolute;
+    top: 0;
+    right: 0;
     display: inline;
-    position: absolute;
-    top:var(--btn-offset-vertical);
-    left:var(--btn-offset-horisontal);
+}
+
+@media(max-width:900px){
+    .window{
+        height: 100%;
+        max-height: none;
+        width: 100%;
+    }
 }

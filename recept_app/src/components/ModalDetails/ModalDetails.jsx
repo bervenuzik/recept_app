@@ -6,20 +6,33 @@ import classNames from "classnames";
 export default function ModalDetails({ open,onClose, children }) {
   const modal = useRef();
   const backdrop = useRef();
-  //const prevScrolltop = useRef(0);
 
-  const onWheel = (event) => {
-    if (event.target === modal.current || modal.current.contains(event.target)) return;
-    event.preventDefault();
-  };
+  const onWheel = useCallback((event) => {
+    if (event.target === modal.current || modal.current.contains(event.target)) {
+      const modalContent = modal.current;
+      const scrollTop = modalContent.scrollTop;
+      const scrollHeight = modalContent.scrollHeight;
+      const clientHeight = modalContent.clientHeight;
+      const atTop = scrollTop === 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight;
+
+      if ((atTop && event.deltaY < 0) || (atBottom && event.deltaY > 0)) {
+        event.preventDefault();
+      }
+    } else {
+      event.preventDefault();
+    }
+  }, []);
 
   const toOpen = useCallback(function toOpen() {
     document.addEventListener("wheel", onWheel, { passive: false });
+    document.addEventListener("touchmove", onWheel, { passive: false });
     modal.current.showModal();
   }, [])
 
   const toClose = useCallback(function toClose() {
     document.removeEventListener("wheel", onWheel);
+    document.removeEventListener("touchmove", onWheel);
     modal.current.close();
   }, [])
 
@@ -28,6 +41,8 @@ export default function ModalDetails({ open,onClose, children }) {
     open ? toOpen() : toClose();
     return () => {
       document.removeEventListener("wheel", onWheel);
+      document.removeEventListener("touchmove", onWheel);
+      
     };
   }, [open , toOpen , toClose]);
 
@@ -37,17 +52,13 @@ export default function ModalDetails({ open,onClose, children }) {
     [`${styles.backdrop}`]: true,
   });
 
-  return createPortal(
-    <>
+  return <>
       <div ref={backdrop} className={backdropStyles}></div>
       <dialog ref={modal} className={styles.window}>
-        <div className={styles.closeBtn}>
+        <span className={styles.closeBtn}>
           <Button onClick={onClose}>Close</Button>
-        </div>
-        <h1 className={styles.test}></h1>
+        </span>
         {children}
       </dialog>
-    </>,
-    document.getElementById("root")
-  );
+    </>;
 }

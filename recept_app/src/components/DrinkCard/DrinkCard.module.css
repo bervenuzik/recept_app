@@ -1,14 +1,16 @@
 :root{
-    --img-size:350px;
-    --card-size:350px;
-    --distance-for-lable-vertical:10px;
-    --distance-for-lable-horisontal:10px;
+    --img-size:400px;
+    --card-size:500px;
+    --card-size-mobile:310px;
+    --distance-for-lables-vertical:10px;
+    --distance-for-lables-horisontal:10px;
 }
 
 .card{
     position: relative;
+    width: 100%;
     padding: 0 0 10px 0 ;
-    width: var(--card-size);
+    max-width: var(--card-size);
     border: 0.5px solid rgb(225, 225, 210);
     box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
@@ -16,6 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     gap:15px;
     text-align: center;
     font-family: "Oswald", sans-serif;
@@ -39,18 +42,23 @@
     aspect-ratio: 1/1;
     width: 100%;
     height: auto;
-    max-width: var(--img-size);
+    cursor: pointer;
+    /* max-width: var(--img-size); */
     
 }
 
-.rating{
+.labels{
     position: absolute;
-    top: var(--distance-for-lable-vertical);
-    left: var(--distance-for-lable-horisontal);
+    display: flex;
+    flex-direction: column;
+    top: var(--distance-for-lables-vertical);
+    left:var(--distance-for-lables-horisontal) ;
+    align-items: start;
+
 }
-.time{
-    position: absolute;
-    top: var(--distance-for-lable-vertical);
-    right: var(--distance-for-lable-horisontal);
+@media  (max-width: 370px) {
+    .card{
+        width: var(--card-size-mobile);
+    }
 }
 
