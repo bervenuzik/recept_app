@@ -1,12 +1,11 @@
 import styles from "./DrawerRight.module.css"
-import fetchData from "../../functions/fetchData";
 import MenuItems from "../MenuItems/MenuItems";
 import { useState, useEffect } from "react";
 import { Drawer, IconButton, ListItem, ListItemButton } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import fetchCategories from "../../functions/fetchCategories";
 
 function DrawerRight({ open, onClose }) {
-    const categoriesUrl = 'https://recept2-siden.reky.se/categories';
     const [menuItems, setMenuItems] = useState([]);
     const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -15,8 +14,8 @@ function DrawerRight({ open, onClose }) {
     };
 
     useEffect(() => {
-        fetchData(categoriesUrl, setMenuItems);
-    }, []);
+        fetchCategories(setMenuItems);
+    }, [menuItems]);
 
     return (
         <Drawer classes={{ paper: styles.drawerRight}} anchor="right" open={open} onClose={onClose}>
@@ -27,7 +26,7 @@ function DrawerRight({ open, onClose }) {
             </ListItem>
             {/* TODO bold when selected */}
             {/* TODO RENAME prop url */}
-            <MenuItems heading={'Categories'} url={categoriesUrl} />
+            <MenuItems heading={'Categories'} items={menuItems}/>
         </Drawer>
     )
 }

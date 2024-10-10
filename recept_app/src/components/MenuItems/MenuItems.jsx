@@ -5,13 +5,7 @@ import { Divider, IconButton, List, ListItem, ListItemButton, ListItemText, Typo
 import { Link } from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-function MenuItems({ heading, url }) {
-    const [menuItems, setMenuItems] = useState([]);
-
-    useEffect(() => {
-        fetchData(url, setMenuItems);
-    }, [url]);
-
+function MenuItems({ heading, items }) {
     return (
         <>
             <List className={styles.menuItem}>
@@ -25,7 +19,7 @@ function MenuItems({ heading, url }) {
 
                 <Divider />
 
-                {menuItems.map((item, index) =>
+                {items.map((item, index) =>
                     <ListItem key={item.name || index}>
                         <ListItemButton component={Link} to={`/categories/${item.name}`}>
                             <ListItemText primary={item.name} />

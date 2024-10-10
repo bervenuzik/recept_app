@@ -1,4 +1,4 @@
-function fetchCategoriesByName(categoryName , callback){
+function fetchRecipesByCategoryName(categoryName , callback){
     fetch(`https://recept2-siden.reky.se/categories/${categoryName}/recipes`)
         .then((res)=>{
             return res.json()
@@ -7,8 +7,8 @@ function fetchCategoriesByName(categoryName , callback){
             callback(data)
         })
         .catch((err)=>{
-            console.error('Error fetching Categories:', err);
+            console.error(`Error fetching ${categoryName} recipes:`, err);
         })
 }
 
-export default fetchCategoriesByName;
+export default fetchRecipesByCategoryName;

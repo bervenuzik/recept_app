@@ -1,7 +1,7 @@
 import { useState , useEffect } from "react"
 import styles from "./CategoryPage.module.css"
 import { CircularProgress } from "@mui/material"
-import fetchCategoriesByName from "../../functions/fetchCategoriesByName.js"
+import fetchCategoriesByName from "../../functions/fetchRecipesByCategoryName.js"
 import CardsGrid from "../CardsGrid/CardsGrid.jsx"
 import { useParams } from "react-router-dom"
  
@@ -13,7 +13,6 @@ function CategoryPage(){
     useEffect(()=>{
         if(categoryName){
             fetchCategoriesByName(categoryName, (data) => {
-                console.log(data);
                 setDrinks(data)
                 setLoading(false);
             })
