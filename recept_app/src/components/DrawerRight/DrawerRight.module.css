@@ -1,3 +1,4 @@
 .drawerRight {
-    width: 400px !important; 
+    width: 25% !important; 
+    min-width: 250px;
 }

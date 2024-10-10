@@ -17,9 +17,7 @@ function MenuItems({ heading, url }) {
             <List className={styles.menuItem}>
                 <ListItem>
                     <ListItemButton>
-                        <Typography variant="h4">
-                            {heading}
-                        </Typography>
+                        <ListItemText primary={<Typography variant="h5">{heading}</Typography>} />
                         <ArrowForwardIcon />
                     </ListItemButton>
 
