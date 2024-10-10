@@ -10,7 +10,7 @@ import IngredientsTable from "../IngredientsTable/IngredientsTable.jsx";
 import Label from "../Label/Label.jsx";
 import CheckList from "../Instructions/CheckList.jsx";
 import { Button } from "@mui/material";
-import ButtonWithMessage from "../ButtonWithMessage/buttonWithMessage.jsx";
+import ButtonWithMessage from "../ButtonWithMessage/ButtonWithMessage.jsx";
 import { useNavigate } from "react-router-dom";
 
 export default function DetailedDrink({ drink, ...props }) {
@@ -75,7 +75,7 @@ export default function DetailedDrink({ drink, ...props }) {
           className={styles.ingridients__image}
           style={imageStyle.current}
         >
-          
+
         </div>
         <div className={styles.ingredients__table}>
           <IngredientsTable
