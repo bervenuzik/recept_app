@@ -25,6 +25,7 @@ function DrawerRight({ open, onClose }) {
                     <ChevronRightIcon />
                 </IconButton>
             </ListItem>
+            {/* TODO bold when selected */}
             {/* TODO RENAME prop url */}
             <MenuItems heading={'Categories'} url={categoriesUrl} />
         </Drawer>
