@@ -1,0 +1,26 @@
+
+.footer {
+  background-color: #0000FF;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px; 
+}
+
+.footer-link:hover {
+  color: #FFD700; 
+}
+
