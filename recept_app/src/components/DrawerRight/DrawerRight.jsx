@@ -1,3 +1,4 @@
+import styles from "./DrawerRight.module.css"
 import fetchData from "../../functions/fetchData";
 import MenuItems from "../MenuItems/MenuItems";
 import { useState, useEffect } from "react";
@@ -18,7 +19,7 @@ function DrawerRight({ open, onClose }) {
     }, []);
 
     return (
-        <Drawer anchor="right" open={open} onClose={onClose}>
+        <Drawer classes={{ paper: styles.drawerRight}} anchor="right" open={open} onClose={onClose}>
             <ListItem onClick={onClose}>
                 <IconButton>
                     <ChevronRightIcon />

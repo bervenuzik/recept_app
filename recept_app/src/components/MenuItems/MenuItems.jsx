@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import fetchData from "../../functions/fetchData"
 import { Divider, IconButton, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function MenuItems({ heading, url }) {
     const [menuItems, setMenuItems] = useState([]);
@@ -15,15 +16,22 @@ function MenuItems({ heading, url }) {
         <>
             <List className={styles.menuItem}>
                 <ListItem>
-                    <Typography variant="h4">
-                        {heading}
-                    </Typography>
+                    <ListItemButton>
+                        <Typography variant="h4">
+                            {heading}
+                        </Typography>
+                        <ArrowForwardIcon />
+                    </ListItemButton>
+
                 </ListItem>
+
                 <Divider />
+
                 {menuItems.map((item, index) =>
                     <ListItem key={item.name || index}>
                         <ListItemButton component={Link} to={`/categories/${item.name}`}>
                             <ListItemText primary={item.name} />
+                            <ArrowForwardIcon />
                         </ListItemButton>
                     </ListItem>
                 )}
