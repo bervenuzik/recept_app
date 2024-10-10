@@ -1,0 +1,7 @@
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+}
