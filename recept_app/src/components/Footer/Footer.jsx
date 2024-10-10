@@ -8,8 +8,8 @@ const Footer = () => {
     <footer className="footer">
       <p className="footer-text">
         BLABLA, Fullständiga rättigheter
-        <Link to="/CategoryPage" className="footer-link">Kategorier</Link> 
-        <Link to="/toplist" className="footer-link">Topplista</Link>
+        <Link to="/categories" className="footer-link">Kategorier</Link> 
+        <Link to="/rated" className="footer-link">Topplista</Link>
         </p>
         </footer>
       );
