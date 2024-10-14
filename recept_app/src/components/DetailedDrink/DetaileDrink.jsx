@@ -32,6 +32,10 @@ export default function DetailedDrink({ drink, ...props }) {
   const handleRedirect = () => {
     navigate(`/recipe/${_id}`);
   };
+
+  const handleRedirectToCategoryPage = (category)=>{
+    navigate(`/categories/${category}`);
+  }
   
   const PROTOCOL = location.protocol
   const HOSTNAME = location.hostname;
@@ -61,7 +65,7 @@ export default function DetailedDrink({ drink, ...props }) {
           <div className={styles.cactegories__list}>
             {categories.map((category, index) => {
               return (
-                <CategoryButton link={`home/${category}`} key={index}>
+                <CategoryButton onClick={()=>handleRedirectToCategoryPage(category)} key={index}>
                   {category}
                 </CategoryButton>
               );
