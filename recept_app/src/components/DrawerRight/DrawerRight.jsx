@@ -2,7 +2,7 @@ import styles from "./DrawerRight.module.css"
 import fetchData from "../../functions/fetchData";
 import MenuItems from "../MenuItems/MenuItems";
 import { useState, useEffect } from "react";
-import { Drawer, IconButton, ListItem, ListItemButton } from "@mui/material";
+import { Drawer, IconButton, ListItem} from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 function DrawerRight({ open, onClose }) {
@@ -27,7 +27,7 @@ function DrawerRight({ open, onClose }) {
             </ListItem>
             {/* TODO bold when selected */}
             {/* TODO RENAME prop url */}
-            <MenuItems heading={'Categories'} url={categoriesUrl} />
+            <MenuItems onClick={onClose} heading={'Categories'} url={categoriesUrl} />
         </Drawer>
     )
 }
