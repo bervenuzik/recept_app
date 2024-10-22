@@ -12,7 +12,7 @@ import CheckList from "../Instructions/CheckList.jsx";
 import { Button } from "@mui/material";
 import ButtonWithMessage from "../ButtonWithMessage/ButtonWithMessage.jsx";
 import { useNavigate } from "react-router-dom";
-import CommentArea from "../CommentArea/CommentArea.jsx";
+import CommentArea from "../../DrinkComments/CommentArea/CommentArea.jsx";
 import DrinkComments from "../../DrinkComments/DrinkComments.jsx";
 import useCommentsList from "../../Hooks/useCommentsList.js";
 
