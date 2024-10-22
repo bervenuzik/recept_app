@@ -12,6 +12,9 @@ import CheckList from "../Instructions/CheckList.jsx";
 import { Button } from "@mui/material";
 import ButtonWithMessage from "../ButtonWithMessage/ButtonWithMessage.jsx";
 import { useNavigate } from "react-router-dom";
+import CommentArea from "../CommentArea/CommentArea.jsx";
+import DrinkComments from "../../DrinkComments/DrinkComments.jsx";
+import useCommentsList from "../../Hooks/useCommentsList.js";
 
 export default function DetailedDrink({ drink, ...props }) {
   const {
@@ -26,6 +29,8 @@ export default function DetailedDrink({ drink, ...props }) {
     ingredients,
     avgRating,
   } = drink;
+
+  const {comments , isLoading , refreshComments} = useCommentsList(_id)
 
   const navigate = useNavigate();
 
@@ -96,9 +101,15 @@ export default function DetailedDrink({ drink, ...props }) {
       <ButtonWithMessage onClick={copyProductlinkToBuffer}  Icon={<ShareIcon/>} msgText={"Link is copied"}>
         Share Link
       </ButtonWithMessage>
-      
           <Button onClick={handleRedirect} endIcon={<WebIcon/>}>Open full page</Button>
       </div>
+      <section className={styles.comments}>
+      <CommentArea
+        drinkID={drink._id}
+        onComment={refreshComments}
+      />
+      <DrinkComments comments={comments} isLoading={isLoading}/>
+      </section>
     </span>
   );
 }
