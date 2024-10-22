@@ -25,7 +25,10 @@ export default function useInput(validationFunction){
             }
         })
     }
+    function reset(){
+        setText(()=>{return initialValue});
+    }
 
-    return [text , onChange]
+    return [text , onChange , reset]
 
 }

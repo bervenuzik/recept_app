@@ -15,8 +15,8 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
     return true;
   }
 
-  const [comment , onCommentChange] = useInput(isCommmentValid);
-  const [name , onNameChange] = useInput(isNameValid);
+  const [comment , onCommentChange , resetComment] = useInput(isCommmentValid);
+  const [name , onNameChange , resetName] = useInput(isNameValid);
   const { requestStatus, handleErrorOnSend, handleSuccessOnSend, resetRequestStatus} = useRequestStatus();
   
 
@@ -27,7 +27,11 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
       return
     }
     const isSuccessed = await sendComment(comment.value, name.value, drinkID , handleSuccessOnSend , handleErrorOnSend);
-    if(isSuccessed) onComment()
+    if(isSuccessed) {
+      onComment();
+      resetComment();
+      resetName();
+    }
   }
 
 
