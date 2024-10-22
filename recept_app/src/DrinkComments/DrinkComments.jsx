@@ -3,9 +3,6 @@ import styles from "./DrinkComments.module.css"
 import { CircularProgress } from "@mui/material";
 import CommentsList from "./CommentsList/CommentsList";
 function DrinkComments({comments , isLoading = false}) {
-
-    console.log(comments)
-    console.log(isLoading)
   return (
     <div className={styles.comments}>
     <h3 className={styles.header}>Comments</h3>

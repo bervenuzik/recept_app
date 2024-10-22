@@ -49,7 +49,6 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
         required
         id="outlined-required"
         label="Your name"
-        defaultValue=""
         fullWidth
         margin="dense" 
         error={name.isHighlighted}
