@@ -18,7 +18,7 @@ function HomePage(){
     
     return (
         <div className={styles.home}>
-            {loading && <CircularProgress />}
+            {loading && <CircularProgress size={"150px"} />}
             {(!loading && drinks) && <CardsGrid drinks={drinks}/>}
         </div>
     )
