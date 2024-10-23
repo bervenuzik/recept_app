@@ -8,13 +8,13 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerGrid}>
         <div className={styles.footerColumn}>
-          <h4>BLABLA, Fullständiga rättigheter</h4>
+          <h4>Sipp & Slurp, Fullständiga rättigheter</h4>
           <Link to="categories/vodka">Vodka</Link>
           <Link to="categories/absinth">Absinth</Link>
           <Link to="categories/gin">Gin</Link>
         </div>
         <div className={styles.footerColumn}>
-          <h4><a href="mailto:blabla@blabla.com?subject=Drinktips&body=Hej, mitt drinktips är:">Drinktips? Kontakta oss!</a></h4>
+          <h4><a href="mailto:sippslurp@gmail.com?subject=Drinktips&body=Hej, mitt drinktips är:">Drinktips? Kontakta oss!</a></h4>
           <Link to="categories/tequila">Tequila</Link>
           <Link to="categories/sake">Sake</Link>
           <Link to="categories/brandy">Brandy</Link>

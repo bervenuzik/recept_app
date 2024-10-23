@@ -1,41 +1,71 @@
 import styles from "./Header.module.css";
-import { useState } from "react";
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Box, TextField } from '@mui/material';
+import { useState, useEffect } from "react";
+import { Box, IconButton, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import MenuItems from "../MenuItems/MenuItems";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import DrawerRight from "../DrawerRight/DrawerRight";
-import SearchBar from "../SearchBar/SearchBar";
+import MenuItems from "../MenuItems/MenuItems";
 
-function Header() {
-    const [drawerOpen, setDrawerOpen] = useState(false);
+function Header({ recipes = [] }) {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const navigate = useNavigate();
 
-    const toggleDrawer = (isOpen) => {
-        setDrawerOpen(isOpen);
-    };
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-    return (
-        <>
-            <header>
-                <Box className={styles.wrapper}>
-                    <IconButton>
-                        logo
-                    </IconButton>
-                    
-                    <SearchBar />
+  useEffect(() => {
+    if (!recipes || recipes.length === 0) {
+      return;
+    }
 
-                    <IconButton onClick={() => toggleDrawer(true)}>
-                        <MenuIcon fontSize="large" />
-                    </IconButton>
-                </Box>
-            </header>
+    const filtered = recipes.filter(recipe =>
+      recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      recipe.ingredients.some(ingredient =>
+        ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+    setFilteredResults(filtered);
+  }, [searchTerm, recipes]);
 
-            <DrawerRight open={drawerOpen} onClose={() => toggleDrawer(false)}>
-                <MenuItems />
-            </DrawerRight>
-        </>
-    )
+  const handleSearch = () => {
+    console.log('Filtrerade resultat:', filteredResults);
+    navigate('/search-results', { state: { results: filteredResults } });
+  };
 
+  const toggleDrawer = (isOpen) => {
+    setDrawerOpen(isOpen);
+  };
+
+  return (
+    <header>
+      <Box className={styles.wrapper}>
+        <IconButton>logo</IconButton>
+
+        <input
+          type="text"
+          placeholder="Sök efter recept eller ingrediens..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          style={{ padding: '10px', width: '300px', borderRadius: '5px', border: '1px solid #ccc' }}
+        />
+
+        <Button onClick={handleSearch} variant="contained" color="primary">
+          SÖK
+        </Button>
+
+        <IconButton onClick={() => toggleDrawer(true)}>
+          <MenuIcon fontSize="large" />
+        </IconButton>
+      </Box>
+
+      <DrawerRight open={drawerOpen} onClose={() => toggleDrawer(false)}>
+        <MenuItems />
+      </DrawerRight>
+    </header>
+  );
 }
 
-export default Header
+export default Header;
