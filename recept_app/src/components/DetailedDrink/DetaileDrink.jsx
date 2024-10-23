@@ -15,6 +15,7 @@ import DrinkComments from "../../DrinkComments/DrinkComments.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import ButtonWithMessage from "../ButtonWithMessage/buttonWithMessage.jsx";
 
+
 export default function DetailedDrink({ drink, ...props }) {
   const {
     _id,
