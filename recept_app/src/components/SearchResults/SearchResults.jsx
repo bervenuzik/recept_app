@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation } from 'react-router-dom';
 import DrinkCard from '../DrinkCard/DrinkCard'; 
 import styles from './SearchResults.module.css';
