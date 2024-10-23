@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react"; 
 import Header from "./components/Header/Header";
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
 import TopRatedPage from "./components/TopRatedPage/TopRatedPage";
@@ -11,6 +11,18 @@ import RecipePage from "./components/RecipePage/RecipePage";
 import SearchResultsPage from "./components/SearchResults/SearchResults";
 import fetchAllRecipes from './functions/fetchAllRecipes'; 
 
+
+function Layout({recipes}) {
+  return (
+    <>
+      <Header recipes={recipes} />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
+}
 function App() {
   const [recipesArray, setRecipesArray] = useState([]);
 
@@ -21,17 +33,15 @@ function App() {
   
   return (
     <AppContext>
-      <Header recipes={recipesArray} /> 
-      <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/rated" element={<TopRatedPage />} />
-          <Route path="/categories/:categoryName" element={<CategoryPage />} />
-          <Route path="/recipe/:id" element={<RecipePage />} />
-          <Route path="/search-results" element={<SearchResultsPage />} />
+          <Route path="/" element={<Layout recipes={recipesArray} />}>
+            <Route index element={<HomePage />}/>
+            <Route path="/rated" element={<TopRatedPage />} />
+            <Route path="/categories/:categoryName" element={<CategoryPage />} />
+            <Route path="/recipe/:id" element={<RecipePage />} />
+            <Route path="/search-results" element={<SearchResultsPage />} />
+          </Route>
         </Routes>
-      </main>
-      <Footer />
     </AppContext>
   );
 }
