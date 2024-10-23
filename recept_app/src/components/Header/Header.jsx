@@ -6,6 +6,8 @@ import MenuItems from "../MenuItems/MenuItems";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import DrawerRight from "../DrawerRight/DrawerRight";
 import SearchBar from "../SearchBar/SearchBar";
+import { Link } from "react-router-dom";
+import logo from '../../assets/images/Sipp & Slurp.png'; // Import the logo from assets
 
 function Header() {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -18,9 +20,11 @@ function Header() {
         <>
             <header>
                 <Box className={styles.wrapper}>
-                    <IconButton>
-                        logo
-                    </IconButton>
+                    <Link to="/">
+                        <IconButton>
+                            <img src={logo} alt="Sipp & Slurp Logo" className={styles.logo} />
+                        </IconButton>
+                    </Link>
                     
                     <SearchBar />
 
@@ -34,8 +38,7 @@ function Header() {
                 <MenuItems />
             </DrawerRight>
         </>
-    )
-
+    );
 }
 
-export default Header
+export default Header;

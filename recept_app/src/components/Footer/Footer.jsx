@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerGrid}>
         <div className={styles.footerColumn}>
-          <h4>BLABLA, Fullständiga rättigheter</h4>
+          <h4>Sipp & Slurp, Fullständiga rättigheter</h4>
           <Link to="categories/vodka">Vodka</Link>
           <Link to="categories/absinth">Absinth</Link>
           <Link to="categories/gin">Gin</Link>
