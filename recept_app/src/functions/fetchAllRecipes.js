@@ -13,6 +13,5 @@ function fetchAllRecipes(callback) {
         console.error('Error fetching recipes:', err);
       });
   }
-  
   export default fetchAllRecipes;
   
