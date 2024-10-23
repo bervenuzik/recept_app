@@ -28,7 +28,7 @@ function Header() {
                     
                     <SearchBar />
 
-                    <IconButton onClick={() => toggleDrawer(true)}>
+                    <IconButton sx={{ color: "white" }} onClick={() => toggleDrawer(true)}>
                         <MenuIcon fontSize="large" />
                     </IconButton>
                 </Box>

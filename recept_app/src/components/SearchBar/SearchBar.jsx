@@ -10,9 +10,26 @@ function SearchBar() {
                 variant="standard"
                 placeholder="Search..."
                 size="large"
+                sx={{
+                    input: {
+                      color: "white",
+                    },
+                    "& .MuiInput-underline:before": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-underline:after": {
+                      borderBottomColor: "white",
+                    },
+                    "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+                      borderBottomColor: "white",
+                    },
+                  }}
             />
             <IconButton type="submit" aria-label="search">
-                <SearchIcon fontSize="medium" />
+                <SearchIcon 
+                fontSize="medium"
+                sx={{ color: "white" }} 
+                />
             </IconButton>
         </Box>
     );
