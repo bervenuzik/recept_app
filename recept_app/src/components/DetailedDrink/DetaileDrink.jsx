@@ -13,6 +13,7 @@ import { Button } from "@mui/material";
 import ButtonWithMessage from "../ButtonWithMessage/ButtonWithMessage.jsx";
 import { useNavigate } from "react-router-dom";
 import DrinkComments from "../../DrinkComments/DrinkComments.jsx";
+import Difficulty from "../Difficulty/Difficulty.jsx";
 
 export default function DetailedDrink({ drink, ...props }) {
   const {
@@ -61,6 +62,7 @@ export default function DetailedDrink({ drink, ...props }) {
           {avgRating &&  <Label Icon={StarsIcon}>{avgRating}</Label>}
         </span>
         <h1>{title}</h1>
+        <Difficulty ingredients={ingredients} />
         <div className={styles.categories}>
           <h5>Categories</h5>
           <div className={styles.cactegories__list}>
