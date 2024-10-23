@@ -6,6 +6,7 @@ const SearchResults = () => {
   const location = useLocation();
   const { results } = location.state || { results: [] }; 
 
+  
   return (
     <div>
       <h1>Sökresultat</h1>
