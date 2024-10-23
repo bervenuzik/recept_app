@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import formatDate from "../../functions/formateDate";
+import formatDate from "../../../functions/formateDate.js";
 import styles from "./CommentsList.module.css"
 function CommentsList({comments}) {
     const reversedComments = useMemo(()=>{

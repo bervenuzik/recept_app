@@ -11,9 +11,9 @@ import Label from "../Label/Label.jsx";
 import CheckList from "../Instructions/CheckList.jsx";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import DrinkComments from "../../DrinkComments/DrinkComments.jsx";
+import DrinkComments from "../DrinkComments/DrinkComments.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
-import ButtonWithMessage from "../ButtonWithMessage/buttonWithMessage.jsx";
+import ButtonWithMessage from "../ButtonWithMessage/buttonWithMessage.jsx"
 
 
 export default function DetailedDrink({ drink, ...props }) {

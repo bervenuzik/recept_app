@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "./SearchBar.module.css"
 
 function SearchBar({ recipes = [] }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,7 +34,7 @@ function SearchBar({ recipes = [] }) {
   };
 
   return (
-    <div>
+    <div className={styles.searchBar}>
       <input
         type="text"
         placeholder="Sök efter recept eller ingrediens..."

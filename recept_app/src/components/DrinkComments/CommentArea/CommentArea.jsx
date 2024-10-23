@@ -1,9 +1,9 @@
 import styles from "./CommentArea.module.css";
 import { Button, Snackbar } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import sendComment from "../../functions/sendComment";
-import useInput from "../../Hooks/useInput";
-import useRequestStatus from "../../Hooks/useRequestStatus";
+import sendComment from "../../../functions/sendComment";
+import useInput from "../../../Hooks/useInput";
+import useRequestStatus from "../../../Hooks/useRequestStatus";
 
 function CommentArea({ drinkID,onComment ,  ...props }) {
   const isNameValid = (name)=>{

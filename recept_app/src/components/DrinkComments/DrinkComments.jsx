@@ -1,9 +1,9 @@
 
 import styles from "./DrinkComments.module.css"
 import { CircularProgress } from "@mui/material";
-import CommentsList from "./CommentsList/CommentsList";
-import CommentArea from "./CommentArea/CommentArea";
-import useCommentsList from "../Hooks/useCommentsList";
+import CommentArea from "./CommentArea/CommentArea.jsx";
+import useCommentsList from "../../Hooks/useCommentsList";
+import CommentsList from "./CommentsList/CommentsList.jsx";
 function DrinkComments({drinkID}) {
 
 const {comments , isLoading , refreshComments} = useCommentsList(drinkID)
