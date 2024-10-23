@@ -13,6 +13,7 @@ const RecipeSearch = () => {
     });
   }, []);
 
+  
   const filteredRecipes = recipes.filter((recipe) => {
     const lowerCaseSearchTerm = searchTerm.toLowerCase();
 

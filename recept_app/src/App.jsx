@@ -18,6 +18,7 @@ function App() {
     fetchAllRecipes(setRecipesArray);
   }, []);
 
+  
   return (
     <AppContext>
       <Header recipes={recipesArray} /> 

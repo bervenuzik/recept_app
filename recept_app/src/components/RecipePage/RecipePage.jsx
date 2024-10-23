@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import styles from "./RecipePage.module.css"
 import { CircularProgress } from "@mui/material";
 import DetailedDrink from "../DetailedDrink/DetaileDrink";
 import fetchProductById from "../../functions/fetchProductById.js"

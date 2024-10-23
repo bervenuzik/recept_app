@@ -16,6 +16,7 @@ function Header({ recipes = [] }) {
     setSearchTerm(event.target.value);
   };
 
+  
   useEffect(() => {
     if (!recipes || recipes.length === 0) {
       return;
