@@ -1,4 +1,4 @@
-
+/*footer*/
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
@@ -14,7 +14,7 @@ const Footer = () => {
           <Link to="categories/gin">Gin</Link>
         </div>
         <div className={styles.footerColumn}>
-          <h4><a href="mailto:blabla@blabla.com?subject=Drinktips&body=Hej, mitt drinktips är:">Drinktips? Kontakta oss!</a></h4>
+          <h4><a href="mailto:sippslurp@gmail.com?subject=Drinktips&body=Hej, mitt drinktips är:">Drinktips? Kontakta oss!</a></h4>
           <Link to="categories/tequila">Tequila</Link>
           <Link to="categories/sake">Sake</Link>
           <Link to="categories/brandy">Brandy</Link>
