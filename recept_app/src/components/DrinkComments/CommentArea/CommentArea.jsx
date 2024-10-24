@@ -14,26 +14,27 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
     if(comment.length <= 0) return false;
     return true;
   }
-
-  const [comment , onCommentChange , resetComment] = useInput(isCommmentValid);
-  const [name , onNameChange , resetName] = useInput(isNameValid);
-  const { requestStatus, handleErrorOnSend, handleSuccessOnSend, resetRequestStatus} = useRequestStatus();
-  
-
+  const nameErrorMessage = "Name should be min 2 symbols, starts with letter , use letters and numbers"
+  const commmentErrorMessage = "Can't be empty"
+  const [comment , onCommentChange , resetComment , validateComment] = useInput(isCommmentValid ,commmentErrorMessage);
+  const [name , onNameChange , resetName , validateName] = useInput(isNameValid , nameErrorMessage);
+  const { requestStatus, handleErrorOnSend, handleSuccessOnSend, resetRequestStatus , markAsSend} = useRequestStatus();
 
   async function handleConfirmation() {
-    if(!isNameValid(name.value) || !isCommmentValid(comment.value)) {
-      handleErrorOnSend("Wrong input, try again")
-      return
+    validateComment();
+    validateName();
+    if(!name.isValid || !comment.isValid) {
+      handleErrorOnSend("Wrong input , try again");
+      return;
     }
     const isSuccessed = await sendComment(comment.value, name.value, drinkID , handleSuccessOnSend , handleErrorOnSend);
     if(isSuccessed) {
       onComment();
       resetComment();
       resetName();
+      markAsSend();
     }
   }
-
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -44,7 +45,11 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
 
 
   return (
-    <div {...props}>
+    <div className={styles.inputs} {...props}>
+      {requestStatus.isSent ?<h3>Tack för komment</h3> : 
+      < >
+        <div className={styles.inputWrapper}>
+
       <TextField
         onChange={(event) => {
           onNameChange(event.target.value);
@@ -55,8 +60,12 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
         label="Your name"
         fullWidth
         margin="dense" 
-        error={name.isHighlighted}
-      />
+        error={name.showError}
+        />
+        {name.showError ? <span className={styles.errorMessage}>{name.errorMessage}</span>: null}
+        </div>
+        <div className={styles.inputWrapper}>
+
       <TextField
         onChange={(event) => {
           onCommentChange(event.target.value);
@@ -68,11 +77,17 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
         fullWidth
         margin="dense" 
         minRows="3"
-        error={comment.isHighlighted}
-      ></TextField>
-      <Button onClick={handleConfirmation} color="success" variant="contained">
+        error={comment.showError}
+        ></TextField>
+        {comment.showError ? <span className={styles.errorMessage}>{comment.errorMessage}</span>: null}
+        </div>
+      <Button sx={{
+        "mt": "7px",
+        "mb": "15px"
+      }}  className={styles.sendBtn} onClick={handleConfirmation} color="success" variant="contained">
         To comment
       </Button>
+        </>}
       <Snackbar
          open={requestStatus.error.status}
          autoHideDuration={6000}

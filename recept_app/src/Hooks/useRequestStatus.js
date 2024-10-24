@@ -11,6 +11,7 @@ export default function useRequestStatus() {
           message: "",
           status: false,
         },
+        isSent:false
       });
 
 
@@ -27,7 +28,7 @@ export default function useRequestStatus() {
         );
       }
 
-      function handleSuccessOnSend(callback) {
+      function handleSuccessOnSend() {
         setRequestStatus( {
           success:{
               message:"Commment is Added",
@@ -39,17 +40,28 @@ export default function useRequestStatus() {
           }}
       );
       }
+      function markAsSend(){
+        setRequestStatus((prev)=>{
+            return {
+                ...prev,
+                isSent:true,
+            }
+        })
+      }
 
       function resetRequestStatus(){
-        setRequestStatus( {
-            success: {
-                message: "",
-                status: false,
-              },
-              error: {
-                message: "",
-                status: false,
-              },
+        setRequestStatus( (prev)=>{
+            return{
+                ...prev,
+                success: {
+                    message: "",
+                    status: false,
+                  },
+                error: {
+                    message: "",
+                    status: false,
+                  },
+                }
             }
         );
       }
@@ -58,7 +70,8 @@ export default function useRequestStatus() {
         requestStatus,
         handleErrorOnSend,
         handleSuccessOnSend,
-        resetRequestStatus
+        resetRequestStatus,
+        markAsSend
 
     }
 }

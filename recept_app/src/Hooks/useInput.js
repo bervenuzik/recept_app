@@ -1,12 +1,13 @@
 import { useState } from "react";
 import DOMPurify from 'dompurify';
 
-export default function useInput(validationFunction){
+export default function useInput(validationFunction , errorMessage){
     const initialValue = {
         value:"",
         isTouched:false,
         isValid:false,
-        isHighlighted: false,
+        showError: false,
+        errorMessage:errorMessage,
     }
     const [text , setText] = useState(initialValue);
 
@@ -16,12 +17,26 @@ export default function useInput(validationFunction){
             value = DOMPurify.sanitize(value);
             const isValid = validationFunction(value)
             const isTouched = true;
-            const isHighlighted = isTouched && !isValid
             return {
                 isValid:isValid,
                 value:value,
-                isTouched:true,
-                isHighlighted: isHighlighted,
+                isTouched:isTouched,
+                showError: isTouched && !isValid,
+                errorMessage:errorMessage,
+            }
+        })
+    }
+
+    function validate(){
+        setText((prev)=>{
+            const isValid = validationFunction(text.value)
+            const isTouched = true;
+            return {
+                ...prev,
+                isTouched:isTouched,
+                isValid:isValid,
+                showError: isTouched && !isValid
+
             }
         })
     }
@@ -29,6 +44,6 @@ export default function useInput(validationFunction){
         setText(()=>{return initialValue});
     }
 
-    return [text , onChange , reset]
+    return [text , onChange , reset , validate]
 
 }
