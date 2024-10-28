@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import DrinkComments from "../DrinkComments/DrinkComments.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import ButtonWithMessage from "../ButtonWithMessage/ButtonWithMessage.jsx"
+import RatingStars from "../RatingStars/RatingStars.jsx";
 
 
 export default function DetailedDrink({ drink, ...props }) {
@@ -103,6 +104,7 @@ export default function DetailedDrink({ drink, ...props }) {
           <Button onClick={handleRedirect} endIcon={<WebIcon/>}>Open full page</Button>
       </div>
       <section className={styles.comments}>
+      <RatingStars drinkID={_id}/>
       <DrinkComments drinkID={_id}/>
       </section>
     </span>
