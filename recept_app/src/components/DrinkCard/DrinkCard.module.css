@@ -56,13 +56,19 @@
     align-items: start;
 
 }
+
 .favorite{
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
     display: block;
     z-index: 0;
+    opacity: 70%;
     
+}
+.favorite path{
+    opacity: 100%;
+    position: relative;
 }
 @media  (max-width: 370px) {
     .card{

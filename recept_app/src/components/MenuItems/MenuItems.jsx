@@ -9,21 +9,20 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 
 function MenuItems({ heading, url  ,onClick }) {
   const [menuItems, setMenuItems] = useState([]);
-//   const {chosenCategory , setChosenCategory}  = useContext(Context)
+
   useEffect(() => {
     fetchData(url, setMenuItems);
   }, [url]);
 
 const {categoryName} = useParams()
-
-  
-  
+//i use location for favorites becouse i cant read catefory id on FavoritePage, but i need to highlight category in menu 
+const location = useLocation().pathname;
 
   return (
     <>
@@ -34,9 +33,15 @@ const {categoryName} = useParams()
             />
         </ListItem>
         <Divider />
+        <ListItem className={location == "/favorites" ? styles.highlighted : ''} >
+            <ListItemButton component={Link} to={`/favorites`}>
+                <ListItemText primary={<Typography variant="h5">{"Favorites"}</Typography>}/>
+                <ArrowForwardIcon />
+              </ListItemButton>
+        </ListItem>
+        <Divider />
         {menuItems.map((item, index) => {
         const isSelected = categoryName == item.name;
-        console.log(item.name+" " + isSelected)
           return (
             <ListItem onClick={onClick} className={isSelected ? styles.highlighted : ''}  key={item.name || index}>
               <ListItemButton  component={Link} to={`/categories/${item.name}`}>
