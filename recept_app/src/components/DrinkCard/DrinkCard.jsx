@@ -5,6 +5,7 @@ import ModalDetails from "../ModalDetails/ModalDetails";
 import { Button } from "@mui/material";
 import DetailedDrink from "../DetailedDrink/DetaileDrink";
 import { useNavigate } from "react-router-dom";
+import FavoritsHeart from "../Favorite/FavoriteHeart/FavoritsHeart.jsx";
 
 
 function DrinkCard({drink}) {
@@ -27,6 +28,7 @@ function DrinkCard({drink}) {
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{description}</p>
         <Button onClick={showDetailedWindow} variant="text" className={styles.btn}>Show More</Button>
+        <FavoritsHeart className={styles.favorite} drink={drink}/>
         
       <ModalDetails onClose={showDetailedWindow} open={detailedMode}>
         <DetailedDrink drink={drink}></DetailedDrink>
