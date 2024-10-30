@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AboutUsPage.module.css";
 import teamData from "../../data/teamData.json";
+import ScrollToTopArrow from "../ScrollToTopArrow/ScrollToTopArrow.jsx";
 
 function AboutUsPage() {
     const [team, setTeam] = useState([]);
@@ -25,6 +26,7 @@ function AboutUsPage() {
                     </div>
                 ))}
             </div>
+            <ScrollToTopArrow />
         </div>
     );
 }

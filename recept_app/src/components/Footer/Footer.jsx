@@ -24,6 +24,9 @@ const Footer = () => {
           <Link to="categories/whiskey">Whiskey</Link>
           <Link to="categories/mezcal">Mezcal</Link>
         </div>
+        <div className={styles.footerColumn}>
+          <h4><Link to="/about-us">Om oss</Link></h4>
+        </div>
       </div>
     </footer>
   );
