@@ -23,6 +23,7 @@ const Footer = () => {
           <Link to="categories/rom">Rom</Link>
           <Link to="categories/whiskey">Whiskey</Link>
           <Link to="categories/mezcal">Mezcal</Link>
+          <Link to="/gdpr">GDPR</Link>
         </div>
       </div>
     </footer>

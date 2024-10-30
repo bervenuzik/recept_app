@@ -13,17 +13,16 @@ import { Link, useParams } from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 
-function MenuItems({ heading, url  ,onClick }) {
+function MenuItems({ heading, url  ,onClick, staticLinks = [] }) {
   const [menuItems, setMenuItems] = useState([]);
-//   const {chosenCategory , setChosenCategory}  = useContext(Context)
-  useEffect(() => {
-    fetchData(url, setMenuItems);
-  }, [url]);
-
 const {categoryName} = useParams()
 
-  
-  
+useEffect(() => {
+  if (url) {
+  fetchData(url, setMenuItems);
+  }
+}, [url]);
+
 
   return (
     <>
@@ -34,6 +33,14 @@ const {categoryName} = useParams()
             />
         </ListItem>
         <Divider />
+        {staticLinks.map((item, index) => (
+        <ListItem key={index} onClick={onClick}>
+          <ListItemButton component={Link} to={item.path}>
+            <ListItemText primary={item.name} />
+            <ArrowForwardIcon />
+          </ListItemButton>
+        </ListItem>
+      ))}
         {menuItems.map((item, index) => {
         const isSelected = categoryName == item.name;
         console.log(item.name+" " + isSelected)
