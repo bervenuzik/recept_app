@@ -1,10 +1,8 @@
 
 import styles from "./DrawerRight.module.css";
 import fetchData from "../../functions/fetchData";
-import styles from "./DrawerRight.module.css"
 import MenuItems from "../MenuItems/MenuItems";
 import { useState, useEffect } from "react";
-import { Drawer, IconButton, ListItem } from "@mui/material";
 import { Drawer, IconButton, ListItem} from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
