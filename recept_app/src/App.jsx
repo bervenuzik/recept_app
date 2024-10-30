@@ -14,6 +14,8 @@ import fetchAllRecipes from './functions/fetchAllRecipes';
 import { useEffect, useState } from "react";
 import FavoritePage from "./components/Favorite/FavoritePage/FavoritePage";
 import AboutUsPage from "./components/AboutUsPage/AboutUsPage";
+import GDPRPage from "./components/GDPRPage/GDPRPage.jsx";
+
 
 function Layout({recipes}) {
   return (
@@ -47,6 +49,7 @@ function App() {
             <Route path="/search-results" element={<SearchResultsPage />} />
             <Route path="/favorites" element={<FavoritePage/>} />
             <Route path="/about-us" element={<AboutUsPage/>} />
+            <Route path="/gdpr" element={<GDPRPage />} />
           </Route>
         </Routes>
     </AppContext>

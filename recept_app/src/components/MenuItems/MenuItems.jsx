@@ -13,14 +13,16 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 
-function MenuItems({ heading, url  ,onClick }) {
+function MenuItems({ heading, url  ,onClick, staticLinks = [] }) {
   const [menuItems, setMenuItems] = useState([]);
-
-  useEffect(() => {
-    fetchData(url, setMenuItems);
-  }, [url]);
-
 const {categoryName} = useParams()
+
+useEffect(() => {
+  if (url) {
+  fetchData(url, setMenuItems);
+  }
+}, [url]);
+
 //i use location for favorites becouse i cant read catefory id on FavoritePage, but i need to highlight category in menu 
 const location = useLocation().pathname;
 
