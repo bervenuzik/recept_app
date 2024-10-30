@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import LOCAL_STORAGE_KEY from "../Variables/favoritesKey.js"
 import CardsGrid from "../../CardsGrid/CardsGrid.jsx";
 import styles from "./FavoritePage.module.css"
+import ScrollToTopArrow from "../../ScrollToTopArrow/ScrollToTopArrow.jsx";
 
 function FavoritePage() {
     const [favorites , setFavorites] = useState([]);
@@ -28,7 +29,7 @@ function FavoritePage() {
                         <CardsGrid drinks={favorites}/>
                     </div>
         }   
-        
+        <ScrollToTopArrow /> 
     </div> 
     );
 }

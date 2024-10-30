@@ -3,6 +3,7 @@ import { CircularProgress } from "@mui/material";
 import DetailedDrink from "../DetailedDrink/DetaileDrink";
 import fetchProductById from "../../functions/fetchProductById.js"
 import { useParams } from "react-router-dom";
+import ScrollToTopArrow from "../ScrollToTopArrow/ScrollToTopArrow.jsx";
 
 
 
@@ -24,6 +25,7 @@ function RecipePage() {
         <>
             {loading && <CircularProgress />}
             {(!loading && drink) && <DetailedDrink drink={drink}/>}
+            <ScrollToTopArrow /> 
         </>
     )
 }

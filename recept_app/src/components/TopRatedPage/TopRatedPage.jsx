@@ -4,6 +4,7 @@ import { CircularProgress } from "@mui/material"
 import doFetch from "../../functions/fetchData.js"
 import CardsGrid from "../CardsGrid/CardsGrid.jsx"
 import Context from "../AppContext/AppContext.jsx"
+import ScrollToTopArrow from "../ScrollToTopArrow/ScrollToTopArrow.jsx";
 
 function TopRated(){
     const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ function TopRated(){
         <div className={styles.home}>
           {loading && <CircularProgress />}
           {!loading && drinks && <CardsGrid drinks={drinks} />}
+          <ScrollToTopArrow />
         </div>
     );
 }

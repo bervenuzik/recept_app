@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import DrinkCard from '../DrinkCard/DrinkCard'; 
 import styles from './SearchResults.module.css';
+import ScrollToTopArrow from "../ScrollToTopArrow/ScrollToTopArrow.jsx";
 
 const SearchResults = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const SearchResults = () => {
         ) : (
           <p>Inga funna recept</p>
         )}
+        <ScrollToTopArrow /> 
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { CircularProgress } from "@mui/material"
 import fetchCategoriesByName from "../../functions/fetchCategoriesByName.js"
 import CardsGrid from "../CardsGrid/CardsGrid.jsx"
 import { useParams } from "react-router-dom"
+import ScrollToTopArrow from "../ScrollToTopArrow/ScrollToTopArrow.jsx";
  
 function CategoryPage(){
     const {categoryName} = useParams()
@@ -25,6 +26,7 @@ function CategoryPage(){
         <div className={styles.home}>
             {loading && <CircularProgress />}
             {(!loading && drinks) && <CardsGrid drinks={drinks}/>}
+            <ScrollToTopArrow /> 
         </div>
     )
  
