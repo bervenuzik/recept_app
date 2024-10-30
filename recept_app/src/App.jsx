@@ -13,6 +13,7 @@ import SearchResultsPage from "./components/SearchResults/SearchResults";
 import fetchAllRecipes from './functions/fetchAllRecipes'; 
 import { useEffect, useState } from "react";
 import FavoritePage from "./components/Favorite/FavoritePage/FavoritePage";
+import AboutUsPage from "./components/AboutUsPage/AboutUsPage";
 
 function Layout({recipes}) {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="/recipe/:id" element={<RecipePage />} />
             <Route path="/search-results" element={<SearchResultsPage />} />
             <Route path="/favorites" element={<FavoritePage/>} />
+            <Route path="/about-us" element={<AboutUsPage/>} />
           </Route>
         </Routes>
     </AppContext>

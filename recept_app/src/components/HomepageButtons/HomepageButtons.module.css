@@ -1,0 +1,26 @@
+.topRatedButton {
+    position: relative;
+    top: 65px; 
+    z-index: 1; 
+    margin-bottom: -10px; 
+    font-size: 1rem; 
+    font-weight: bold;
+}
+
+.aboutButton {
+    position: relative;
+    top: 65px; 
+    z-index: 1; 
+    margin-bottom: -10px; 
+    font-size: 1rem; 
+    font-weight: bold;
+}
+
+.scrollButton {
+    position: relative;
+    top: 65px; 
+    z-index: 1; 
+    margin-bottom: -10px; 
+    font-size: 1rem; 
+    font-weight: bold;
+}

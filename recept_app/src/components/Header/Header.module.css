@@ -1,11 +1,11 @@
-header {
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
 
     width: 100%;
-    height: 150%;
+    height: 200%;
 
     background-color: #113826;
 }
@@ -15,8 +15,14 @@ header {
     align-items: center;
     width: 100%;
     max-width: 1218px;
+    padding: 0 20px;
+    gap: 20px;
 }
 .logo {
     width: 80px; 
     height: auto;
+    margin-right: 20px;
+}
+.scrollButton {
+    margin-right: 20px;
 }

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Albin Kaufeldt Lönn",
+        "role": "Developer",
+        "email": "albin.kaufeldt.lonn@iths.se",
+        "phone": "+46 70-759 87 24",
+        "image": "../src/assets/images/Albin.png"
+        
+    },
+    {
+        "name": "Elliot Hansson ",
+        "role": "Developer",
+        "email": "elliot.hansson.lonn@iths.se",
+        "phone": "",
+        "image": "../src/assets/images/.png"
+        
+    },
+    {
+        "name": "Vladyslav Berveno",
+        "role": "Developer",
+        "email": "vladyslav.berveno.lonn@iths.se",
+        "phone": "",
+        "image": "../src/assets/images/.png"
+        
+    },
+    {
+        "name": "Erik Hillborg",
+        "role": "Developer",
+        "email": "erik.hillborg.lonn@iths.se",
+        "phone": "",
+        "image": "../src/assets/images/.png"
+        
+    },
+    {
+        "name": "Louise Björnson",
+        "role": "Project leader",
+        "email": "louise.bjornson.lonn@iths.se",
+        "phone": "",
+        "image": "../src/assets/images/.png"
+        
+    },
+    {
+        "name": "Linn Schaubach",
+        "role": "Project leader",
+        "email": "linn.schaubach.lonn@iths.se",
+        "phone": "",
+        "image": "../src/assets/images/.png"
+        
+    },
+    {
+        "name": "Adam Öberg",
+        "role": "Project leader",
+        "email": "adam.oberg.lonn@iths.se",
+        "phone": "",
+        "image": "../src/assets/images/.png"
+        
+    },
+    {
+        "name": "Anna Odhelius",
+        "role": "Project leader",
+        "email": "anna.odhelius.lonn@iths.se",
+        "phone": "",
+        "image": "../src/assets/images/.png"
+        
+    }
+]

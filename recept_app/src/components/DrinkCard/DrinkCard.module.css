@@ -11,8 +11,8 @@
     width: 100%;
     padding: 0 0 10px 0 ;
     max-width: var(--card-size);
-    border: 0.5px solid rgb(225, 225, 210);
-    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
+    border: 5px solid #9c7945; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
     -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
     display: flex;
