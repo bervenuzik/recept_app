@@ -35,7 +35,7 @@ const location = useLocation().pathname;
         <Divider />
         <ListItem className={location == "/favorites" ? styles.highlighted : ''} >
             <ListItemButton component={Link} to={`/favorites`}>
-                <ListItemText primary={<Typography variant="h5">{"Favorites"}</Typography>}/>
+                <ListItemText primary={<Typography variant="h5">{"Favoriter"}</Typography>}/>
                 <ArrowForwardIcon />
               </ListItemButton>
         </ListItem>

@@ -22,9 +22,9 @@ function FavoritePage() {
     return ( 
     <div className={styles.favoritePage}>
         
-        {favorites.length == 0 && <h1>Your favorites list is empty</h1>}
+        {favorites.length == 0 && <h1>Din favorit lista är tom</h1>}
         {favorites.length > 0 && <div>
-                        <h3>Your favorite coctailes </h3>
+                        <h3>Dina favorit drinkar är </h3>
                         <CardsGrid drinks={favorites}/>
                     </div>
         }   

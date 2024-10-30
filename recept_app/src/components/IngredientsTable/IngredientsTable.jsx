@@ -22,12 +22,12 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 export default function IngredientsTable({ingredients , id}){
     return  <span className={styles.table}>
     <TableContainer elevation={0}   component={Paper}>
-    <h4>Ingredients</h4>
+    <h4>Ingredienser</h4>
     <Table aria-label="Ingredients">
       <TableHead>
         <TableRow>
-          <StyledTableCell>name</StyledTableCell>
-          <StyledTableCell align="right">amount</StyledTableCell>
+          <StyledTableCell>Namn</StyledTableCell>
+          <StyledTableCell align="right">Mängd</StyledTableCell>
         </TableRow>
       </TableHead>
       <TableBody>

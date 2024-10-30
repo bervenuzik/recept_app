@@ -27,7 +27,7 @@ function DrinkCard({drink}) {
 
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{description}</p>
-        <Button onClick={showDetailedWindow} variant="text" className={styles.btn}>Show More</Button>
+        <Button onClick={showDetailedWindow} variant="text" className={styles.btn}>Visa mer</Button>
         <FavoritsHeart className={styles.favorite} drink={drink}/>
         
       <ModalDetails onClose={showDetailedWindow} open={detailedMode}>

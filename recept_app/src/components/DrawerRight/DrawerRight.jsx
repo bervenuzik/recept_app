@@ -15,7 +15,7 @@ function DrawerRight({ open, onClose }) {
             </ListItem>
             {/* TODO bold when selected */}
             {/* TODO RENAME prop url */}
-            <MenuItems onClick={onClose} heading={'Categories'} url={categoriesUrl} />
+            <MenuItems onClick={onClose} heading={'Kategorier'} url={categoriesUrl} />
         </Drawer>
     )
 }

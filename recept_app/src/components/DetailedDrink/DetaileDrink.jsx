@@ -66,7 +66,7 @@ export default function DetailedDrink({ drink, ...props }) {
         <h1>{title}</h1>
         <Difficulty ingredients={ingredients} />
         <div className={styles.categories}>
-          <h5>Categories</h5>
+          <h5>Kategori</h5>
           <div className={styles.cactegories__list}>
             {categories.map((category, index) => {
               return (
@@ -94,14 +94,14 @@ export default function DetailedDrink({ drink, ...props }) {
         </div>
       </section>
       <section className={styles.instructions}>
-        <CheckList list={instructions}>Instructions</CheckList>
+        <CheckList list={instructions}>Instruktioner</CheckList>
       </section>
       <div className={styles.buttons}>
 
-      <ButtonWithMessage onClick={copyProductlinkToBuffer}  Icon={<ShareIcon/>} msgText={"Link is copied"}>
-        Share Link
+      <ButtonWithMessage onClick={copyProductlinkToBuffer}  Icon={<ShareIcon/>} msgText={"Länk kopierad"}>
+        Dela länk
       </ButtonWithMessage>
-          <Button onClick={handleRedirect} endIcon={<WebIcon/>}>Open full page</Button>
+          <Button onClick={handleRedirect} endIcon={<WebIcon/>}>Öppna fullständig sida</Button>
       </div>
       <section className={styles.comments}>
       <RatingStars drinkID={_id}/>

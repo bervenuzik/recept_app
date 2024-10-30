@@ -7,15 +7,15 @@ import useRequestStatus from "../../../Hooks/useRequestStatus";
 
 function CommentArea({ drinkID,onComment ,  ...props }) {
   const isNameValid = (name)=>{
-    const nameRegex = /^[a-zA-Z][a-zA-Z0-9]*$/;
+    const nameRegex = /^[a-äA-Z][a-zA-Z0-9]*$/;
     return name.length > 2 && nameRegex.test(name);
   }
   const isCommmentValid = (comment)=>{
     if(comment.length <= 0) return false;
     return true;
   }
-  const nameErrorMessage = "Name should be min 2 symbols, starts with letter , use letters and numbers"
-  const commmentErrorMessage = "Can't be empty"
+  const nameErrorMessage = "Namnet måste vara minst 2 symboler och börja med en bokstav."
+  const commmentErrorMessage = "Kan inte vara tom!"
   const [comment , onCommentChange , resetComment , validateComment] = useInput(isCommmentValid ,commmentErrorMessage);
   const [name , onNameChange , resetName , validateName] = useInput(isNameValid , nameErrorMessage);
   const { requestStatus, handleErrorOnSend, handleSuccessOnSend, resetRequestStatus , markAsSend} = useRequestStatus();
@@ -24,7 +24,7 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
     validateComment();
     validateName();
     if(!name.isValid || !comment.isValid) {
-      handleErrorOnSend("Wrong input , try again");
+      handleErrorOnSend("Fel inmatning , försök igen");
       return;
     }
     const isSuccessed = await sendComment(comment.value, name.value, drinkID , handleSuccessOnSend , handleErrorOnSend);
@@ -46,7 +46,7 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
 
   return (
     <div className={styles.inputs} {...props}>
-      {requestStatus.isSent ?<h3>Tack för komment</h3> : 
+      {requestStatus.isSent ?<h3>Tack för din kommentar</h3> : 
       < >
         <div className={styles.inputWrapper}>
 
@@ -57,7 +57,7 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
         value={name.value}
         required
         id="outlined-required"
-        label="Your name"
+        label="Ditt namn"
         fullWidth
         margin="dense" 
         error={name.showError}
@@ -71,8 +71,8 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
           onCommentChange(event.target.value);
         }}
         value={comment.value}
-        label="Coment Field"
-        placeholder="Leave a comment"
+        label="Kommentarsfält"
+        placeholder="Lämna en kommentar"
         multiline
         fullWidth
         margin="dense" 
@@ -85,7 +85,7 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
         "mt": "7px",
         "mb": "15px"
       }}  className={styles.sendBtn} onClick={handleConfirmation} color="success" variant="contained">
-        To comment
+        Kommentera
       </Button>
         </>}
       <Snackbar
