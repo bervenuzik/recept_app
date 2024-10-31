@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./AboutUsPage.module.css";
-import teamData from "../../data/TeamData.json";
+import teamData from "../../Data/TeamData";
 import ScrollToTopArrow from "../ScrollToTopArrow/ScrollToTopArrow.jsx";
 
 function AboutUsPage() {
