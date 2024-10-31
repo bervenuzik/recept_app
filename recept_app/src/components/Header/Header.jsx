@@ -5,7 +5,7 @@ import MenuItems from "../MenuItems/MenuItems";
 import DrawerRight from "../DrawerRight/DrawerRight";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/Sipp & Slurp.png"; 
+import logo from "../../assets/Sipp & Slurp.png"; 
 import styles from "./Header.module.css";
 
 function Header({ recipes = [] }) {
