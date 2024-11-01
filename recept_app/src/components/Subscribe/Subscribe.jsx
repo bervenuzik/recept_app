@@ -1,4 +1,4 @@
-import { Button, Snackbar, TextField } from "@mui/material";
+import { Button, Paper, Snackbar, TextField } from "@mui/material";
 import styles from "./Subscribe.module.css"
 import useInput from "../../Hooks/useInput";
 import { useCallback, useContext, useState } from "react";
@@ -7,16 +7,19 @@ import Context from "../AppContext/AppContext"
 const LOCAL_STORAGE_SUBSCRIPTION_EMAIL_KEY = "subscription_email";
 
 function Subscribe() {
+
+    const emailValidator = useCallback((email)=>{
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    },[])
+
     const [email , onEmailChange , resetEmail , validateEmail] =  useInput(emailValidator)
     const [error, setErrorMessage , resetError] = useError();
     const [isSubscribed , setIsSubscribed] = useState(false);
     const {isCookiesAccepted} = useContext(Context);
     const emailLS = localStorage.getItem(LOCAL_STORAGE_SUBSCRIPTION_EMAIL_KEY);
 
-    const emailValidator = useCallback((email)=>{
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    },[])
+    
 
     function onSubscribe(){
         if(!isCookiesAccepted){
@@ -39,19 +42,20 @@ function Subscribe() {
         resetError();
     }
 
-    if(emailLS)setIsSubscribed(true); 
+    if(emailLS || isSubscribed) return <p className={styles.subscription}>You are subscribed on our news</p> 
 
-    return ( <div>
+    return ( <div className={styles.subscription}>
+       
         <p>Subscribe on our News</p>
         <TextField
         onChange={(event) => {
-          onEmailChange(event.target.value);
+          onEmailChange(event.target.value.trim());
         }}
         value={email.value}
         required
+        placeholder="Youremail@mail.com"
         id="outlined-required"
         label="Email"
-        fullWidth
         margin="dense" 
         error={email.showError}
         />
@@ -62,6 +66,7 @@ function Subscribe() {
          onClose={handleClose}
          message={error.message}
       />
+      
     </div> );
 }
 
