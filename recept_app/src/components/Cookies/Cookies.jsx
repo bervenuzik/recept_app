@@ -22,7 +22,7 @@ function Cookies () {
         };
     }, []);
 
-    if(isCookiesAccepted || isAcceptetLS == true) return null;
+    if(isCookiesAccepted || isAcceptetLS == "true") return null;
 
     return ( <div className={styles.cookies}>
         <div className={styles.wrapper}>
