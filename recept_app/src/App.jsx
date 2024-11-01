@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import FavoritePage from "./components/Favorite/FavoritePage/FavoritePage";
 import AboutUsPage from "./components/AboutUsPage/AboutUsPage";
 import GDPRPage from "./components/GDPRPage/GDPRPage.jsx";
+import Cookies from "./components/Cookies/Cookies.jsx";
 
 
 function Layout({recipes}) {
@@ -25,6 +26,7 @@ function Layout({recipes}) {
         <Outlet />
       </main>
       <Footer />
+      <Cookies/>
     </>
   );
 }
