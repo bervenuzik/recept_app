@@ -1,26 +1,25 @@
+.buttonGroup{
+    gap: 20px;
+    display: flex;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: fit-content;
+}
 .topRatedButton {
-    position: relative;
-    top: 65px; 
     z-index: 1; 
-    margin-bottom: -10px; 
     font-size: 1rem; 
     font-weight: bold;
 }
 
 .aboutButton {
-    position: relative;
-    top: 65px; 
     z-index: 1; 
-    margin-bottom: -10px; 
     font-size: 1rem; 
     font-weight: bold;
 }
 
 .scrollButton {
-    position: relative;
-    top: 65px; 
     z-index: 1; 
-    margin-bottom: -10px; 
     font-size: 1rem; 
     font-weight: bold;
 }

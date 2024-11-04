@@ -61,7 +61,7 @@ export default function DetailedDrink({ drink, ...props }) {
         <span className={styles.labels}>
         {price &&  <Label Icon={PaidIcon}>{price}</Label>}
           {timeInMins && <Label Icon={AccessTimeIcon}>{timeInMins}</Label>}
-          {avgRating &&  <Label Icon={StarsIcon}>{avgRating}</Label>}
+          {avgRating &&  <Label Icon={StarsIcon}>{avgRating.toFixed(1)}</Label>}
         </span>
         <h1>{title}</h1>
         <Difficulty ingredients={ingredients} />

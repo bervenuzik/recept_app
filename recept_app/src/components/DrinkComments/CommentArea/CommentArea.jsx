@@ -27,7 +27,7 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
       handleErrorOnSend("Fel inmatning , försök igen");
       return;
     }
-    const isSuccessed = await sendComment(comment.value, name.value, drinkID , handleSuccessOnSend , handleErrorOnSend);
+    const isSuccessed = await sendComment(comment.value.trim(), name.value.trim(), drinkID , handleSuccessOnSend , handleErrorOnSend);
     if(isSuccessed) {
       onComment();
       resetComment();
@@ -77,8 +77,9 @@ function CommentArea({ drinkID,onComment ,  ...props }) {
         fullWidth
         margin="dense" 
         minRows="3"
+        maxRows={10}
         error={comment.showError}
-        ></TextField>
+        />
         {comment.showError ? <span className={styles.errorMessage}>{comment.errorMessage}</span>: null}
         </div>
       <Button sx={{

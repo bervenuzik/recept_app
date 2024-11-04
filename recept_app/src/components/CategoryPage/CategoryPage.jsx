@@ -1,6 +1,6 @@
 import { useState , useEffect } from "react"
 import styles from "./CategoryPage.module.css"
-import { CircularProgress } from "@mui/material"
+import { CircularProgress, Typography } from "@mui/material"
 import fetchCategoriesByName from "../../functions/fetchCategoriesByName.js"
 import CardsGrid from "../CardsGrid/CardsGrid.jsx"
 import { useParams } from "react-router-dom"
@@ -24,6 +24,9 @@ function CategoryPage(){
     
     return (
         <div className={styles.home}>
+            <Typography variant="h2">
+                {categoryName}
+            </Typography>
             {loading && <CircularProgress />}
             {(!loading && drinks) && <CardsGrid drinks={drinks}/>}
             <ScrollToTopArrow /> 

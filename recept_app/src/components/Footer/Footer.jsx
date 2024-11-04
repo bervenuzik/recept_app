@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
+import Subscribe from '../Subscribe/Subscribe';
 
 const Footer = () => {
   return (

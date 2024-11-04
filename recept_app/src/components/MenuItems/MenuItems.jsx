@@ -23,7 +23,7 @@ useEffect(() => {
   }
 }, [url]);
 
-//i use location for favorites becouse i cant read catefory id on FavoritePage, but i need to highlight category in menu 
+//i use location for favorites becouse i cant read category id on FavoritePage, but i need to highlight category in menu 
 const location = useLocation().pathname;
 
   return (
@@ -35,11 +35,29 @@ const location = useLocation().pathname;
             />
         </ListItem>
         <Divider />
-        <ListItem className={location == "/favorites" ? styles.highlighted : ''} >
-            <ListItemButton component={Link} to={`/favorites`}>
-                <ListItemText primary={<Typography variant="h5">{"Favoriter"}</Typography>}/>
+        <ListItem className={location == "/" ? styles.highlighted : ''} >
+            <ListItemButton component={Link} to={`/`}>
+                <ListItemText primary={"All drinks"}/>
                 <ArrowForwardIcon />
               </ListItemButton>
+        </ListItem>
+        <ListItem className={location == "/rated" ? styles.highlighted : ''} >
+            <ListItemButton component={Link} to={`/rated`}>
+                <ListItemText primary={"Top 10"}/>
+                <ArrowForwardIcon />
+              </ListItemButton>
+        </ListItem>
+        <ListItem className={location == "/favorites" ? styles.highlighted : ''} >
+            <ListItemButton component={Link} to={`/favorites`}>
+                <ListItemText primary={"Favoriter"}/>
+                <ArrowForwardIcon />
+              </ListItemButton>
+        </ListItem>
+        <Divider />
+        <ListItem>
+            <ListItemText
+              primary={<Typography variant="h5">Categories</Typography>}
+            />
         </ListItem>
         <Divider />
         {menuItems.map((item, index) => {
