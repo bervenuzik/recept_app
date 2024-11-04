@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./HomepageButtons.module.css";
@@ -22,7 +21,7 @@ function HomepageButtons() {
     };
 
     return (
-        <Box className={styles.buttonGroup} style={{ gap: "20px", display: "flex" }}>
+        <div className={styles.buttonGroup}>
             <Button 
                 variant="contained" 
                 color="primary" 
@@ -47,7 +46,7 @@ function HomepageButtons() {
             >
                 Till alla drinkar
             </Button>
-        </Box>
+        </div>
     );
 }
 

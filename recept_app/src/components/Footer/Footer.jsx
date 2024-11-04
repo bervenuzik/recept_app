@@ -30,7 +30,6 @@ const Footer = () => {
           <h4><Link to="/about-us">Om oss</Link></h4>
         </div>
       </div>
-      <Subscribe/>
     </footer>
   );
 };
