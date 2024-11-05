@@ -15,6 +15,7 @@ import DrinkComments from "../DrinkComments/DrinkComments.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import ButtonWithMessage from "../ButtonWithMessage/ButtonWithMessage.jsx"
 import RatingStars from "../RatingStars/RatingStars.jsx";
+import BackHandIcon from '@mui/icons-material/BackHand';
 
 
 export default function DetailedDrink({ drink, ...props }) {
@@ -46,25 +47,31 @@ export default function DetailedDrink({ drink, ...props }) {
   const PORT = location.port ? (":"+location.port) : ""
   const LINK = PROTOCOL + "//" + HOSTNAME + PORT + "/recipe/" + _id;
 
-  const imageStyle = useRef({
-    backgroundImage: `url(${imageUrl})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  });
 
   function copyProductlinkToBuffer(){
     navigator.clipboard.writeText(LINK);
   }
+
+  const getDifficulty = (numIngredients) => {
+    if (numIngredients <= 3) return "Enkel";
+    if (numIngredients <= 6) return "Medium";
+    return "Svår";
+  };
+
+  const difficulty = getDifficulty(ingredients.length);
+
+
   return (
     <span {...props}>
       <section className={styles.detailedDrink}>
         <span className={styles.labels}>
         {price &&  <Label Icon={PaidIcon}>{price}</Label>}
           {timeInMins && <Label Icon={AccessTimeIcon}>{timeInMins}</Label>}
-          {avgRating &&  <Label Icon={StarsIcon}>{avgRating}</Label>}
+          {avgRating &&  <Label Icon={StarsIcon}>{Number.parseFloat(avgRating).toFixed(1)}</Label>}
+          {difficulty && <Label Icon={BackHandIcon}>{difficulty}</Label>}
         </span>
         <h1>{title}</h1>
-        <Difficulty ingredients={ingredients} />
+        {/* <Difficulty ingredients={ingredients}/> */}
         <div className={styles.categories}>
           <h5>Kategori</h5>
           <div className={styles.cactegories__list}>
@@ -77,15 +84,12 @@ export default function DetailedDrink({ drink, ...props }) {
             })}
           </div>
         </div>
-        <p>{description}</p>
+        <p className={styles.description}>{description}</p>
       </section>
       <section className={styles.ingridients}>
-        <div
-          className={styles.ingridients__image}
-          style={imageStyle.current}
-        >
-
-        </div>
+        <div className={styles.ingridients_image_container}>
+        <img className={styles.ingridients__image} src={imageUrl}/>
+        </div> 
         <div className={styles.ingredients__table}>
           <IngredientsTable
             ingredients={ingredients}

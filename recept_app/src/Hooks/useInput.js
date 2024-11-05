@@ -13,7 +13,6 @@ export default function useInput(validationFunction , errorMessage){
 
     function onChange(value){
         setText(()=>{
-            value = value.trim();
             value = DOMPurify.sanitize(value);
             const isValid = validationFunction(value)
             const isTouched = true;

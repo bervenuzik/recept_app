@@ -18,7 +18,7 @@ function HomePage() {
             setDrinks(data);
             setLoading(false);
         });
-    }, []);
+    }, [setDrinks]);
 
     return (
         <div className={styles.home}>

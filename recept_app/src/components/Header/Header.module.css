@@ -3,13 +3,12 @@
     justify-content: center;
     align-items: center;
     flex-flow: row nowrap;
-
     width: 100%;
-    height: 200%;
-
+    height: 80px;
     background-color: #113826;
 }
 .wrapper {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +17,41 @@
     padding: 0 20px;
     gap: 20px;
 }
-.logo {
+.searchBar{
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 650px){
+    .wrapper {
+        display: grid;
+        gap: 0;
+        grid-template-areas: "logo burger"
+                            "search search";
+    }
+
+    .header {
+        padding-bottom: 5px;
+        height: auto;
+    }
+
+    .logo {
+        grid-area: logo;
+        justify-self:left;
+    }
+    .burger{
+        grid-area: burger;
+        justify-self:right;
+    }
+    .searchBar{
+        grid-area: search;
+        justify-self:center;
+    }
+
+}
+
+.img {
     width: 80px; 
     height: auto;
     margin-right: 20px;

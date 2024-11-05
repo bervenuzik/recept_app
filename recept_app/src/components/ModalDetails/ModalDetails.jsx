@@ -28,13 +28,13 @@ export default function ModalDetails({ open,onClose, children }) {
     document.addEventListener("wheel", onWheel, { passive: false });
     document.addEventListener("touchmove", onWheel, { passive: false });
     modal.current.showModal();
-  }, [])
+  }, [onWheel])
 
   const toClose = useCallback(function toClose() {
     document.removeEventListener("wheel", onWheel);
     document.removeEventListener("touchmove", onWheel);
     modal.current.close();
-  }, [])
+  }, [onWheel])
 
 
   useEffect(() => {

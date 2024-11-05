@@ -1,7 +1,7 @@
-import { Button, Rating, Snackbar } from "@mui/material";
-import { useState } from "react";
+import { Rating, Snackbar } from "@mui/material";
 import sendRating from "../../functions/sendRating.js"
 import useRating from "../../Hooks/useRating.js";
+import LocalBarOutlinedIcon from '@mui/icons-material/LocalBarOutlined';
 
 function RatingStars({drinkID}) {
   const {rating , setRating , isRated , setIsRated , error ,setErrorMessage, resetError , resetRating} = useRating(0);
@@ -23,6 +23,8 @@ function RatingStars({drinkID}) {
     }
     resetError();
 }
+
+const icon = <span><LocalBarOutlinedIcon/></span>
   return (
     <div>
       { !isRated && <div>
@@ -37,6 +39,8 @@ function RatingStars({drinkID}) {
         }}
         defaultValue={1}
         precision={1}
+        icon={icon}
+        emptyIcon={icon}
         />
         </div>
         }
