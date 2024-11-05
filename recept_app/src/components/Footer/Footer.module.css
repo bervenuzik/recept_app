@@ -5,6 +5,7 @@
   width: 100%;
   text-align: center;
   box-sizing: border-box;
+  height: fit-content;
 }
 
 .footerGrid {
