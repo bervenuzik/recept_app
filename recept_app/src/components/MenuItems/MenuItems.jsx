@@ -37,13 +37,13 @@ const location = useLocation().pathname;
         <Divider />
         <ListItem className={location == "/" ? styles.highlighted : ''} >
             <ListItemButton component={Link} to={`/`}>
-                <ListItemText primary={"All drinks"}/>
+                <ListItemText primary={"Alla drinkar och cocktails"}/>
                 <ArrowForwardIcon />
               </ListItemButton>
         </ListItem>
         <ListItem className={location == "/rated" ? styles.highlighted : ''} >
             <ListItemButton component={Link} to={`/rated`}>
-                <ListItemText primary={"Top 10"}/>
+                <ListItemText primary={"Topp 10 drinkar"}/>
                 <ArrowForwardIcon />
               </ListItemButton>
         </ListItem>
