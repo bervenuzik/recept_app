@@ -15,6 +15,7 @@ import DrinkComments from "../DrinkComments/DrinkComments.jsx";
 import Difficulty from "../Difficulty/Difficulty.jsx";
 import ButtonWithMessage from "../ButtonWithMessage/ButtonWithMessage.jsx"
 import RatingStars from "../RatingStars/RatingStars.jsx";
+import BackHandIcon from '@mui/icons-material/BackHand';
 
 
 export default function DetailedDrink({ drink, ...props }) {
@@ -55,6 +56,16 @@ export default function DetailedDrink({ drink, ...props }) {
   function copyProductlinkToBuffer(){
     navigator.clipboard.writeText(LINK);
   }
+
+  const getDifficulty = (numIngredients) => {
+    if (numIngredients <= 3) return "Enkel";
+    if (numIngredients <= 6) return "Medium";
+    return "Svår";
+  };
+
+  const difficulty = getDifficulty(ingredients.length);
+
+
   return (
     <span {...props}>
       <section className={styles.detailedDrink}>
@@ -62,9 +73,10 @@ export default function DetailedDrink({ drink, ...props }) {
         {price &&  <Label Icon={PaidIcon}>{price}</Label>}
           {timeInMins && <Label Icon={AccessTimeIcon}>{timeInMins}</Label>}
           {avgRating &&  <Label Icon={StarsIcon}>{Number.parseFloat(avgRating).toFixed(1)}</Label>}
+          {difficulty && <Label Icon={BackHandIcon}>{difficulty}</Label>}
         </span>
         <h1>{title}</h1>
-        <Difficulty ingredients={ingredients} />
+        {/* <Difficulty ingredients={ingredients}/> */}
         <div className={styles.categories}>
           <h5>Kategori</h5>
           <div className={styles.cactegories__list}>

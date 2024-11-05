@@ -52,6 +52,13 @@
     gap: 20px;
     align-items: center;
   }
+
+  .comments{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   @media (max-width:900px){
     .ingridients{
       margin: 30px 0;
