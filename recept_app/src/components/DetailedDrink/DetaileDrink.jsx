@@ -47,11 +47,6 @@ export default function DetailedDrink({ drink, ...props }) {
   const PORT = location.port ? (":"+location.port) : ""
   const LINK = PROTOCOL + "//" + HOSTNAME + PORT + "/recipe/" + _id;
 
-  const imageStyle = useRef({
-    backgroundImage: `url(${imageUrl})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  });
 
   function copyProductlinkToBuffer(){
     navigator.clipboard.writeText(LINK);
@@ -89,15 +84,12 @@ export default function DetailedDrink({ drink, ...props }) {
             })}
           </div>
         </div>
-        <p>{description}</p>
+        <p className={styles.description}>{description}</p>
       </section>
       <section className={styles.ingridients}>
-        <div
-          className={styles.ingridients__image}
-          style={imageStyle.current}
-        >
-
-        </div>
+        <div className={styles.ingridients_image_container}>
+        <img className={styles.ingridients__image} src={imageUrl}/>
+        </div> 
         <div className={styles.ingredients__table}>
           <IngredientsTable
             ingredients={ingredients}
