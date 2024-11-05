@@ -20,7 +20,7 @@ function Cookies () {
         return () => {
             window.removeEventListener('storage', handleStorageChange);
         };
-    }, []);
+    }, [resetCookies]);
 
     if(isCookiesAccepted || isAcceptetLS == "true") return null;
 
