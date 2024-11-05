@@ -4,7 +4,7 @@
         "role": "Developer",
         "email": "albin.kaufeldt.lonn@iths.se",
         "phone": "+46 70-759 87 24",
-        "image": "../src/assets/Albin.png"
+        "image": "/Images/Albin.png"
         
     },
     {
@@ -12,7 +12,7 @@
         "role": "Developer",
         "email": "elliot.hansson@iths.se",
         "phone": "",
-        "image": "../src/assets/Elliot.jfif"
+        "image": "/Images/Elliot.jfif"
         
     },
     {
@@ -20,7 +20,7 @@
         "role": "Developer",
         "email": "vladyslav.berveno@iths.se",
         "phone": "073-6748736",
-        "image": "../src/assets/Vlad.jpg"
+        "image": "/Images//Vlad.jpg"
         
     },
     {
@@ -28,7 +28,7 @@
         "role": "Developer",
         "email": "erik.hillborg@iths.se",
         "phone": "",
-        "image": "../src/assets/Erik.jfif"
+        "image": "/Images/Erik.jfif"
         
     },
     {
@@ -36,7 +36,7 @@
         "role": "Project leader",
         "email": "louise.bjornson@iths.se",
         "phone": "070-4972636",
-        "image": "../src/assets/Louise.jfif"
+        "image": "/Images/Louise.jfif"
         
     },
     {
@@ -44,7 +44,7 @@
         "role": "Project leader",
         "email": "linn.schaubach@iths.se",
         "phone": "0708-927929",
-        "image": "../src/assets/Linn.jfif"
+        "image": "/Images/Linn.jfif"
         
     },
     {
@@ -52,7 +52,7 @@
         "role": "Project leader",
         "email": "adam.oberg@iths.se",
         "phone": "",
-        "image": "../src/assets/Adam.jfif"
+        "image": "/Images/Adam.jfif"
         
     },
     {
@@ -60,7 +60,7 @@
         "role": "Project leader",
         "email": "anna.odhelius@iths.se",
         "phone": "0736-703466",
-        "image": "../src/assets/Anna.jfif"
+        "image": "/Images/Anna.jfif"
         
     }
 ]
