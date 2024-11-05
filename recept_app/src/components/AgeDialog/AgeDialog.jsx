@@ -10,12 +10,12 @@ export default function AgeDialog({ open, onConfirm, onReject }) {
             aria-describedby="age-dialog-description">
 
             <DialogTitle id="age-dialog-title">
-                {"Är du över 18 år?"}
+                {"Är du över 25 år?"}
             </DialogTitle>
 
             <DialogContent>
                 <DialogContentText id="age-dialog-description">
-                    Denna webbplats innehåller information om alkoholhaltiga drycker och riktar sig till dig som fyllt 18 år.
+                    Denna webbplats innehåller information om alkoholhaltiga drycker och riktar sig till dig som fyllt 25 år.
                 </DialogContentText>
             </DialogContent>
 
@@ -24,7 +24,7 @@ export default function AgeDialog({ open, onConfirm, onReject }) {
                     Nej
                 </Button>
                 <Button onClick={onConfirm} color="primary" autoFocus>
-                    Ja, jag är över 18 år
+                    Ja, jag är över 25 år
                 </Button>
             </DialogActions>
 
