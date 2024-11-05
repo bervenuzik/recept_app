@@ -1,9 +1,11 @@
 html{
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 body{
-  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0 ;
@@ -14,10 +16,11 @@ main{
   width: 100%;
 }
 #root {
-  padding: 0 100px;
-  margin: 0 auto;
-  height: 100%;
-  
+  width: 100%;
+  display: grid;
+  grid-template-rows: 80px 1fr minmax(40px , fit-content);
+  grid-template-columns: 1fr;
+  padding: 0;  
 }
 
 
