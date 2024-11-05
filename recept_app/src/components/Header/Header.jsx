@@ -19,15 +19,15 @@ function Header({ recipes = [] }) {
         <>
             <header className={styles.header}>
                 <Box className={styles.wrapper}>
-                    <Link to="/">
+                    <Link className={styles.logo} to="/">
                         <IconButton>
-                            <img src={logo} alt="Sipp & Slurp Logo" className={styles.logo} />
+                            <img src={logo} alt="Sipp & Slurp Logo" className={styles.img} />
                         </IconButton>
                     </Link>
 
-                    <SearchBar recipes={recipes} />
+                    <SearchBar className={styles.searchBar} recipes={recipes} />
 
-                    <IconButton sx={{ color: "white" }} onClick={() => toggleDrawer(true)}>
+                    <IconButton className={styles.burger} sx={{ color: "white" }} onClick={() => toggleDrawer(true)}>
                         <MenuIcon fontSize="large" />
                     </IconButton>
                 </Box>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchBar.module.css"
 
-function SearchBar({ recipes = [] }) {
+function SearchBar({ recipes = [] , ...props}) {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
 
@@ -34,6 +34,8 @@ function SearchBar({ recipes = [] }) {
   };
 
   return (
+    <span {...props}>
+
     <div className={styles.searchBar}>
       <input
         type="text"
@@ -41,17 +43,19 @@ function SearchBar({ recipes = [] }) {
         value={searchTerm}
         onChange={handleSearchChange}
         style={{
-          padding: "10px",
-          width: "300px",
-          borderRadius: "5px",
-          border: "1px solid #ccc",
+            padding: "10px",
+            maxWidth:"600px",
+            width: "100%",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
         }}
-      />
+        />
 
       <Button onClick={handleSearch} variant="contained" color="primary">
         SÖK
       </Button>
     </div>
+        </span>
   );
 }
 
