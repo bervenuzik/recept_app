@@ -7,7 +7,7 @@ import CardsGrid from "../CardsGrid/CardsGrid.jsx";
 import Context from "../AppContext/AppContext.jsx";
 import ScrollToTopArrow from "../ScrollToTopArrow/ScrollToTopArrow.jsx";
 import HomepageButtons from "../HomepageButtons/HomepageButtons.jsx";
-import headerImage from "../../assets/images/Green bar.jpg";
+import headerImage from "../../assets/Images/Green bar.jpg";
 
 function HomePage() {
     const [loading, setLoading] = useState(true);
