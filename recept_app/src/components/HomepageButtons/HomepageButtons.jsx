@@ -2,15 +2,9 @@ import { Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./HomepageButtons.module.css";
 
-function HomepageButtons() {
+function HomepageButtons({ scrollToDrinks }) {
+    
     const navigate = useNavigate();
-
-    const scrollToDrinks = () => {
-        window.scrollBy({
-            top: window.innerHeight, 
-            behavior: "smooth"
-        });
-    };
 
     const goToTopRated = () => {
         navigate("/rated");
@@ -41,7 +35,7 @@ function HomepageButtons() {
             <Button
                 variant="contained"
                 color="primary"
-                onClick={scrollToDrinks}
+                onClick={scrollToDrinks}  
                 className={styles.scrollButton}
             >
                 Till alla drinkar
