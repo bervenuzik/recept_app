@@ -33,20 +33,6 @@ export default function DetailedDrink({ drink, ...props }) {
     avgRating,
   } = drink;
 
-  const { color } = useColorThief(imageUrl, {
-    format: 'hex',
-    colorCount: 1,
-    quality: 20,
-  });
-
-  if(color) console.log(color)
-
-  function isImageLight(color) {
-    // Формула для расчета яркости цвета
-    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-    // Пороговое значение для определения светлого цвета
-    return brightness > 128;
-  }
 
   const navigate = useNavigate();
 
