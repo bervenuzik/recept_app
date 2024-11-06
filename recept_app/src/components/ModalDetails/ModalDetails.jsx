@@ -14,7 +14,7 @@ export default function ModalDetails({ open,onClose, children }) {
       const scrollHeight = modalContent.scrollHeight;
       const clientHeight = modalContent.clientHeight;
       const atTop = scrollTop === 0;
-      const atBottom = scrollTop + clientHeight >= scrollHeight;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
 
       if ((atTop && event.deltaY < 0) || (atBottom && event.deltaY > 0)) {
         event.preventDefault();
