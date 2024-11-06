@@ -6,11 +6,13 @@ import { Button } from "@mui/material";
 import DetailedDrink from "../DetailedDrink/DetaileDrink";
 import { useNavigate } from "react-router-dom";
 import FavoritsHeart from "../Favorite/FavoriteHeart/FavoritsHeart.jsx";
+import StarsIcon from "@mui/icons-material/Stars";
+import Label from "../Label/Label.jsx";
 
 
 function DrinkCard({drink}) {
   const [detailedMode , setDetailedMode] = useState(false);
-  const {title, imageUrl ,description} = drink;
+  const {title, imageUrl ,description , avgRating} = drink;
   const navigate = useNavigate();
 
   function showDetailedWindow(){
@@ -22,13 +24,14 @@ function DrinkCard({drink}) {
   };
   return (
     <div  className={styles.card}>
+      <FavoritsHeart className={styles.favorite} drink={drink}/>
       <img  onClick={handleRedirect} src={imageUrl} alt={`${title}_image`} />
       <div className={styles.info}>
-
+      {avgRating && <Label className={styles.rating} Icon={StarsIcon}>{Number.parseFloat(avgRating).toFixed(1)}</Label>}
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{description}</p>
         <Button onClick={showDetailedWindow} variant="text" className={styles.btn}>Visa mer</Button>
-        <FavoritsHeart className={styles.favorite} drink={drink}/>
+        
         
       <ModalDetails onClose={showDetailedWindow} open={detailedMode}>
         <DetailedDrink drink={drink}></DetailedDrink>
