@@ -7,16 +7,45 @@ Recept App is a web application designed to help users discover and share recipe
 - [Installation](#installation)
 - [Usage](#usage)
 - [Components](#components)
+  - [App](#app)
+  - [Layout](#layout)
+  - [Header](#header)
+  - [Footer](#footer)
   - [HomePage](#homepage)
-  - [IngredientsTable](#ingredientstable)
-  - [Label](#label)
   - [CategoryPage](#categorypage)
+  - [RecipePage](#recipepage)
+  - [SearchResultsPage](#searchresultspage)
+  - [FavoritePage](#favoritepage)
+  - [AboutUsPage](#aboutuspage)
+  - [GDPRPage](#gdprpage)
+  - [Cookies](#cookies)
+  - [AgeDialog](#agedialog)
   - [DrinkCard](#drinkcard)
   - [DetailedDrink](#detaileddrink)
-  - [Header](#header)
-  - [ModalDetails](#modaldetails)
+  - [IngredientsTable](#ingredientstable)
+  - [Label](#label)
+  - [DrinkComments](#drinkcomments)
+  - [CommentArea](#commentarea)
+  - [CommentsList](#commentslist)
   - [RatingStars](#ratingstars)
-- [License](#license)
+  - [ScrollToTopArrow](#scrolltotoparrow)
+  - [ModalDetails](#modaldetails)
+  - [ButtonWithMessage](#buttonwithmessage)
+  - [CategoryButton](#categorybutton)
+  - [Difficulty](#difficulty)
+  - [FavoritsHeart](#favoritsheart)
+  - [CheckList](#checklist)
+  - [SearchBar](#searchbar)
+  - [DrawerRight](#drawerright)
+  - [MenuItems](#menuitems)
+
+## Installation
+
+To install and run the project locally, follow these steps:
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/recept_app.git
 
 ## Installation
 
