@@ -1,11 +1,12 @@
-# Recept App
+# Sipp & Slurp
 
-Recept App is a web application designed to help users discover and share recipes. The app features a variety of components that work together to provide a seamless user experience.
+Sipp & Slurp is a web application designed to help users discover and share drink recipes. The app features a variety of components that work together to provide a seamless user experience.
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Features](#features)
 - [Components](#components)
   - [App](#app)
   - [Layout](#layout)
@@ -38,6 +39,8 @@ Recept App is a web application designed to help users discover and share recipe
   - [SearchBar](#searchbar)
   - [DrawerRight](#drawerright)
   - [MenuItems](#menuitems)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
@@ -45,27 +48,35 @@ To install and run the project locally, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/recept_app.git
+   git clone https://github.com/bervenuzik/recept_app.git
 
-## Installation
-
-To install and run the project locally, follow these steps:
-
-1. Clone the repository:
+2. Navigate to the project directory:
    ```sh
-   git clone https://github.com/yourusername/recept_app.git
+   cd recept_app
+   ```
 
-2.Navigate to the project directory:
-cd recept_app
+3. Install the dependencies:
+   ```sh
+   npm install
+   ```
 
-3.Install the dependencies:
-npm install
-
-4.Start the development server:
-npm run dev
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
 ## Usage
 Open your browser and navigate to http://localhost:3000 to see the app in action.
+
+## Features
+
+- Discover a wide variety of drink recipes
+- Search for recipes by name or category
+- View detailed information about each recipe, including ingredients and instructions
+- Rate and comment on recipes
+- Save your favorite recipes for easy access
+- Share recipes with friends and family
+- Responsive design for use on any device
 
 ## Components
 
@@ -220,7 +231,15 @@ The MenuItems component displays a list of menu items for navigation.
 
 File: src/components/MenuItems/MenuItems.jsx
 
+## Contributing
+
+We welcome contributions to Sipp & Slurp! If you would like to contribute, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes and commit them with clear and concise commit messages.
+4. Push your changes to your forked repository.
+5. Create a pull request to the main repository, describing your changes in detail.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
